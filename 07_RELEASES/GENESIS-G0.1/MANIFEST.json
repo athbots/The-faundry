@@ -1,0 +1,10 @@
+{
+  "release_id": "GENESIS-G0.1",
+  "status": "foundation-frozen",
+  "authority_stack": [
+    "CONST-001",
+    "IP-001",
+    "FM-001"
+  ],
+  "next_target": "FS-OBS-001"
+}

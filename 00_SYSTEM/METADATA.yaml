@@ -1,0 +1,19 @@
+repository:
+  name: The Foundry
+  release: GENESIS-G0.1
+  status: frozen-foundation
+authority:
+  constitution: CONST-001
+  institutional_physics: IP-001
+  meta_model: FM-001
+required_object_identity:
+  - ObjectID
+  - ObjectType
+  - Version
+required_traceability:
+  - Authority
+  - Relationships
+  - Validation
+  - History
+downstream_next:
+  specification: FS-OBS-001
