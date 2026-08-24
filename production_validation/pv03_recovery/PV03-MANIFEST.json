@@ -1,0 +1,7 @@
+{
+  "validation": "PV-03 Recovery",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | PV03-01 backup/restore preserves state and events\nPASS | PV03-02 event lineage reconstructs history\nPASS | PV03-03 replay cannot create duplicate event\nPASS | PV03-04 recovered state is integrity-stable\nSUMMARY | 4/4 PV03 recovery tests PASS",
+  "qualification": "reference SQLite persistence only"
+}

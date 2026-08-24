@@ -1,0 +1,30 @@
+PASS | E01 | exact duplicate | got=EQUIVALENT | expected=EQUIVALENT
+PASS | E02 | surface paraphrase | got=EQUIVALENT | expected=EQUIVALENT
+PASS | E03 | case whitespace | got=EQUIVALENT | expected=EQUIVALENT
+PASS | C01 | explicit negation | got=CONTRADICTORY | expected=CONTRADICTORY
+FAIL | C02 | opposite polarity | got=DISTINCT | expected=CONTRADICTORY
+PASS | U01 | C/F mismatch | got=UNIT_MISMATCH | expected=UNIT_MISMATCH
+PASS | U02 | mm/m mismatch | got=UNIT_MISMATCH | expected=UNIT_MISMATCH
+PASS | V01 | same unit different value | got=VALUE_CONFLICT | expected=VALUE_CONFLICT
+PASS | V02 | same metric conflicting count | got=VALUE_CONFLICT | expected=VALUE_CONFLICT
+PASS | D01 | different subject | got=DISTINCT | expected=DISTINCT
+PASS | D02 | different metric | got=DISTINCT | expected=DISTINCT
+FAIL | D03 | different entity | got=RELATED | expected=DISTINCT
+FAIL | C03 | negative adjective | got=DISTINCT | expected=CONTRADICTORY
+FAIL | U03 | voltage units | got=DISTINCT | expected=UNIT_MISMATCH
+PASS | V03 | timestamp difference | got=VALUE_CONFLICT | expected=VALUE_CONFLICT
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+Traceback (most recent call last):
+  File [35m"/mnt/data/the-foundry-pv05-semantic-calibration/production_validation/pv05_semantic_calibration/test_pv05_semantic_calibration.py"[0m, line [35m15[0m, in [35m<module>[0m
+    assert [31mall[0m[1;31m(results)[0m, f"{sum(results)}/{len(results)} semantic cases passed"
+           [31m~~~[0m[1;31m^^^^^^^^^[0m
+[1;35mAssertionError[0m: [35m11/15 semantic cases passed[0m

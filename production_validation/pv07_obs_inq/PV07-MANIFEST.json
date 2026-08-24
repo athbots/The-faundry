@@ -1,0 +1,7 @@
+{
+  "validation": "OBS\u2192INQ Interface",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | OBS\u2192INQ interface | all boundary invariants\nSUMMARY | 8/8 interface invariants PASS",
+  "qualification": "reference interface; INQ semantics and production queueing remain separate validation domains"
+}

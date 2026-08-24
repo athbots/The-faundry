@@ -1,0 +1,21 @@
+{
+  "decision_id": "DEC-OBS-002",
+  "object": "FS-OBS-002",
+  "decision": "RATIFY",
+  "status": "ACTIVE",
+  "authority": "CISA",
+  "founder_direction": "YES",
+  "effective_date": "2026-08-16",
+  "decision_scope": "canonical OBS semantic safety boundary",
+  "qualification": "not production-grade general semantic certification",
+  "mandatory_future_gate": "REAL-SEM-01",
+  "predecessor": "FS-OBS-001 G0.3",
+  "reason": "PV-05 exposed material semantic safety defects; revised layer passed adversarial and integrated regression validation.",
+  "evidence": [
+    "PV-05 16/16",
+    "PV-02 PASS",
+    "PV-03 PASS",
+    "PV-04 PASS"
+  ],
+  "institutional_memory_policy": "G0.3 preserved; affected semantic portion superseded, not deleted"
+}

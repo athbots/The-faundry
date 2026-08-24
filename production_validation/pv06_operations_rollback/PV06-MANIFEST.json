@@ -1,0 +1,8 @@
+{
+  "validation": "PV-06 Operations & Rollback",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | PV06-01 immutable release identity\nPASS | PV06-02 known-good release recorded\nPASS | PV06-03 rollback restores known-good\nPASS | PV06-04 evidence survives rollback\nPASS | PV06-05 missing known-good fails closed\nPASS | PV06-06 rollback is audited\nPASS | PV06-07 no mixed authoritative version\nPASS | PV06-08 deployment history is preserved\nSUMMARY | PV06 operations/rollback | 8/8 PASS",
+  "tests": 8,
+  "qualification": "deterministic reference deployment controller; not production deployment certification"
+}

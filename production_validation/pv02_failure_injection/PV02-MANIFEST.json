@@ -1,0 +1,7 @@
+{
+  "validation": "PV-02 Failure Injection",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | PV02-01 interrupted transaction rollback\nPASS | PV02-02 committed state survives reopen\nPASS | PV02-03 recovery after interrupted transaction\nSUMMARY | 3/3 PV02 failure-injection tests PASS",
+  "qualification": "transaction rollback and reopen validated; hard process-kill and deployed storage failure remain external gates"
+}

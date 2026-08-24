@@ -1,0 +1,93 @@
+SUITE production_validation/pv05_semantic_calibration/test_pv05_semantic_calibration.py EXIT=0
+PASS | E01 | exact duplicate | got=EQUIVALENT | expected=EQUIVALENT
+PASS | E02 | surface paraphrase | got=EQUIVALENT | expected=EQUIVALENT
+PASS | E03 | case whitespace | got=EQUIVALENT | expected=EQUIVALENT
+PASS | C01 | explicit negation | got=CONTRADICTORY | expected=CONTRADICTORY
+PASS | C02 | opposite polarity | got=CONTRADICTORY | expected=CONTRADICTORY
+PASS | U01 | compatible-unit different physical value | got=VALUE_CONFLICT | expected=VALUE_CONFLICT
+PASS | U02 | mm/m mismatch | got=EQUIVALENT | expected=EQUIVALENT
+PASS | V01 | same unit different value | got=VALUE_CONFLICT | expected=VALUE_CONFLICT
+PASS | V02 | same metric conflicting count | got=VALUE_CONFLICT | expected=VALUE_CONFLICT
+PASS | D01 | different subject | got=DISTINCT | expected=DISTINCT
+PASS | D02 | different metric | got=DISTINCT | expected=DISTINCT
+PASS | D03 | different entity | got=DISTINCT | expected=DISTINCT
+PASS | C03 | negative adjective | got=CONTRADICTORY | expected=CONTRADICTORY
+PASS | U03 | voltage units | got=EQUIVALENT | expected=EQUIVALENT
+PASS | V03 | timestamp difference | got=RELATED | expected=RELATED
+PASS | U04 | compatible-unit same physical value | got=EQUIVALENT | expected=EQUIVALENT
+SUMMARY | PV05 semantic calibration | 16/16 PASS
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+SUITE production_validation/pv02_failure_injection/test_pv02_failure_injection.py EXIT=0
+PASS | PV02-01 interrupted transaction rollback
+PASS | PV02-02 committed state survives reopen
+PASS | PV02-03 recovery after interrupted transaction
+SUMMARY | 3/3 PV02 failure-injection tests PASS
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+SUITE production_validation/pv03_recovery/test_pv03_recovery.py EXIT=0
+PASS | PV03-01 backup/restore preserves state and events
+PASS | PV03-02 event lineage reconstructs history
+PASS | PV03-03 replay cannot create duplicate event
+PASS | PV03-04 recovered state is integrity-stable
+SUMMARY | 4/4 PV03 recovery tests PASS
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+SUITE production_validation/pv04_load/test_pv04_load.py EXIT=0
+{"n": 100, "insert_seconds": 0.19254171600005066, "transition_seconds": 0.2052014569999301, "insert_ops_s": 519.3679690689663, "transition_ops_s": 487.32597449361225, "p50_insert_ms": 1.7924599999901147, "obs": 100, "events": 100, "bad_states": 0}
+{"n": 1000, "insert_seconds": 2.012105467999959, "transition_seconds": 2.1483318370000006, "insert_ops_s": 496.9918405887561, "transition_ops_s": 465.47743825108137, "p50_insert_ms": 1.8497199999956138, "obs": 1000, "events": 1000, "bad_states": 0}
+{"n": 5000, "insert_seconds": 9.873319830000014, "transition_seconds": 11.289442009000027, "insert_ops_s": 506.41527734243294, "transition_ops_s": 442.8916855247552, "p50_insert_ms": 1.8336859999976696, "obs": 5000, "events": 5000, "bad_states": 0}
+PASS | PV04 sustained serial load | all integrity checks green
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+
+PASS | PV05 integrated regression | 4/4 suites
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.

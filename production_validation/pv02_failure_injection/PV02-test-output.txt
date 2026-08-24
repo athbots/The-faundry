@@ -1,0 +1,4 @@
+PASS | PV02-01 interrupted transaction rollback
+PASS | PV02-02 committed state survives reopen
+PASS | PV02-03 recovery after interrupted transaction
+SUMMARY | 3/3 PV02 failure-injection tests PASS

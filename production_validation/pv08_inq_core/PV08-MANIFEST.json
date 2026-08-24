@@ -1,0 +1,7 @@
+{
+  "validation": "FS-INQ-002 Inquiry Core v1",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | INQ core lifecycle and authority boundary\nSUMMARY | 8/8 INQ invariants PASS",
+  "qualification": "reference INQ lifecycle and authority model; not production-scale workflow validation"
+}

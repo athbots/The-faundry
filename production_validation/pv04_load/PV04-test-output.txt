@@ -1,0 +1,14 @@
+{"n": 100, "insert_seconds": 0.2714790830000027, "transition_seconds": 0.3105777009999997, "insert_ops_s": 368.35250397541313, "transition_ops_s": 321.9806176619232, "p50_insert_ms": 2.4033810000076983, "obs": 100, "events": 100, "bad_states": 0}
+{"n": 1000, "insert_seconds": 2.273653278000012, "transition_seconds": 2.4576079519999894, "insert_ops_s": 439.820798393516, "transition_ops_s": 406.8997250705528, "p50_insert_ms": 1.994519999982458, "obs": 1000, "events": 1000, "bad_states": 0}
+{"n": 5000, "insert_seconds": 10.558445935999998, "transition_seconds": 11.128545056000007, "insert_ops_s": 473.5545392103621, "transition_ops_s": 449.295031366587, "p50_insert_ms": 1.9107755000078441, "obs": 5000, "events": 5000, "bad_states": 0}
+PASS | PV04 sustained serial load | all integrity checks green
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.

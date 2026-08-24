@@ -1,0 +1,13 @@
+PASS | PV-15 end-to-end cross-layer integration
+SUMMARY | 12/12 integration invariants PASS
+{"DECISION": "DEC-04d6a9275d9179d60098dfb9", "DEC_PROPOSAL": "DP-ae7fef39bf7ccd221ab14bce", "EXECUTION": "EXEC-2754db651b72c6fda3189675", "EXECUTION_AUTH": "EXAUTH-e9a673a1598303a1400b71f4", "INQ": "INQ-2a45a093a0fdfcb9281033c9", "OBS_TRIGGER": "OBS-INT-001", "OUTCOME_OBS": "OBS-INT-002"}
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.

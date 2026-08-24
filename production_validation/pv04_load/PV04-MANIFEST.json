@@ -1,0 +1,41 @@
+{
+  "validation": "PV-04 Sustained Load",
+  "status": "PASS",
+  "exit_code": 0,
+  "benchmarks": [
+    {
+      "n": 100,
+      "insert_seconds": 0.2714790830000027,
+      "transition_seconds": 0.3105777009999997,
+      "insert_ops_s": 368.35250397541313,
+      "transition_ops_s": 321.9806176619232,
+      "p50_insert_ms": 2.4033810000076983,
+      "obs": 100,
+      "events": 100,
+      "bad_states": 0
+    },
+    {
+      "n": 1000,
+      "insert_seconds": 2.273653278000012,
+      "transition_seconds": 2.4576079519999894,
+      "insert_ops_s": 439.820798393516,
+      "transition_ops_s": 406.8997250705528,
+      "p50_insert_ms": 1.994519999982458,
+      "obs": 1000,
+      "events": 1000,
+      "bad_states": 0
+    },
+    {
+      "n": 5000,
+      "insert_seconds": 10.558445935999998,
+      "transition_seconds": 11.128545056000007,
+      "insert_ops_s": 473.5545392103621,
+      "transition_ops_s": 449.295031366587,
+      "p50_insert_ms": 1.9107755000078441,
+      "obs": 5000,
+      "events": 5000,
+      "bad_states": 0
+    }
+  ],
+  "qualification": "reference SQLite single-process serial workload; not a production capacity claim"
+}

@@ -1,0 +1,7 @@
+{
+  "validation": "PV-16 Cross-Layer Failure & Recovery",
+  "status": "PASS",
+  "tests": 12,
+  "result": "12/12 failure-recovery invariants PASS",
+  "qualification": "Reference validation only; distributed transactions, production persistence, real execution safety, exact governance weights and REAL-SEM-01 remain open"
+}

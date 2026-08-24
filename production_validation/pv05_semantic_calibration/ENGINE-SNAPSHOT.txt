@@ -1,0 +1,28 @@
+import re
+NEG={"not","no","never","without","isn't","isnt"}
+UNITS={"c","f","k","bar","psi","v","a","hz","rpm","mm","cm","m"}
+SYNONYMS={
+    "thermal":"temperature",
+    "temp":"temperature",
+    "elevated":"high",
+    "raised":"high",
+    "increased":"high",
+    "lowered":"low",
+    "reduced":"low",
+}
+def tok(x):
+    words=re.findall(r"[a-z0-9.]+",str(x).lower())
+    return [SYNONYMS.get(w,w) for w in words]
+def jac(a,b):
+    A,B=set(tok(a)),set(tok(b))
+    return len(A&B)/len(A|B) if A and B else 0
+def rel(a,b):
+    ta,tb=tok(a),tok(b)
+    if bool(set(ta)&NEG)!=bool(set(tb)&NEG): return "CONTRADICTORY"
+    ua,ub=set(ta)&UNITS,set(tb)&UNITS
+    if ua and ub and ua!=ub: return "UNIT_MISMATCH"
+    na=re.findall(r"(?<![a-z])\d+(?:\.\d+)?",str(a))
+    nb=re.findall(r"(?<![a-z])\d+(?:\.\d+)?",str(b))
+    if na and nb and na!=nb and jac(a,b)>=.5: return "VALUE_CONFLICT"
+    s=jac(a,b)
+    return "EQUIVALENT" if s>=.8 else "RELATED" if s>=.55 else "DISTINCT"

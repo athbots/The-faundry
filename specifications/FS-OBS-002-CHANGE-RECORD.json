@@ -1,0 +1,8 @@
+{
+  "change_id": "FS-OBS-002",
+  "status": "IMPLEMENTED_BUT_BLOCKED",
+  "baseline": "FS-OBS-001 G0.3 frozen architecture",
+  "reason": "PV-05 exposed four semantic safety defects",
+  "tests_passed": false,
+  "next_gate": "integrated regression then Founder/CISA ratification"
+}

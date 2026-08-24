@@ -1,0 +1,9 @@
+{
+  "validation": "PV-11 INQ Investigation Work Products",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | INQ investigation work products\nSUMMARY | 8/8 work-product invariants PASS",
+  "tests": 8,
+  "qualification": "reference work-product/provenance model; production persistence and distributed collaboration remain unvalidated",
+  "implementation_correction": "REVIEW now checks the actor of the referenced work product"
+}

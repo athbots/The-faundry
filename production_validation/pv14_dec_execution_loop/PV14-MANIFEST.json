@@ -1,0 +1,8 @@
+{
+  "validation": "PV-14 DEC Execution Authorization & Closed-Loop Verification",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | DEC execution authorization and closed-loop verification\nSUMMARY | 10/10 execution-loop invariants PASS",
+  "tests": 10,
+  "qualification": "reference execution loop; real infrastructure execution, safety controls, and production authorization remain unvalidated"
+}

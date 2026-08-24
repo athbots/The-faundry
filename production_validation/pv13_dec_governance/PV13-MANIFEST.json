@@ -1,0 +1,9 @@
+{
+  "validation": "PV-13 DEC Boundary & Governance",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | DEC boundary and governance\nSUMMARY | 10/10 DEC invariants PASS\nNOTE | Exact CFO/TEAM numerical weights remain unratified.",
+  "tests": 10,
+  "qualification": "reference model; exact CFO/TEAM numerical weights and production execution controls remain open",
+  "correction": "ABSTAIN now fails closed instead of being silently treated as support"
+}

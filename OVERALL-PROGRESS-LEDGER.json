@@ -1,0 +1,4 @@
+{
+  "PV-17 Concurrency / Stale-State / Persistence": "PASS",
+  "Production certification": "NOT CERTIFIED \u2014 production database durability/isolation, distributed consensus, real execution safety, exact governance weights, and REAL-SEM-01 remain open"
+}

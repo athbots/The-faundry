@@ -1,0 +1,7 @@
+{
+  "validation": "PV-01 Security",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | PV01-01 capability forgery\nPASS | PV01-02 foreign authority substitution\nPASS | PV01-03 wrong-scope replay\nPASS | PV01-04 direct transition bypass\nPASS | PV01-05 immutable evidence\nPASS | PV01-06 audit provenance\nPASS | PV01-07 invalid capability type\nSUMMARY | 7/7 PV01 security tests PASS",
+  "qualification": "reference implementation only; not production security certification"
+}

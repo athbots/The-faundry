@@ -1,0 +1,17 @@
+id,class,a,b,expected
+E01,exact duplicate,motor temperature high,motor temperature high,EQUIVALENT
+E02,surface paraphrase,motor temperature high,motor thermal temperature elevated,EQUIVALENT
+E03,case whitespace,Motor Temperature High,motor temperature high,EQUIVALENT
+C01,explicit negation,motor temperature high,motor temperature not high,CONTRADICTORY
+C02,opposite polarity,door is open,door is closed,CONTRADICTORY
+U01,compatible-unit different physical value,temperature 80 c,temperature 80 f,VALUE_CONFLICT
+U02,mm/m mismatch,shaft length 100 mm,shaft length 10 cm,EQUIVALENT
+V01,same unit different value,temperature 80 c,temperature 20 c,VALUE_CONFLICT
+V02,same metric conflicting count,failure count 10,failure count 2,VALUE_CONFLICT
+D01,different subject,motor temperature high,warehouse door opened,DISTINCT
+D02,different metric,motor temperature high,motor vibration high,DISTINCT
+D03,different entity,motor A temperature high,motor B temperature high,DISTINCT
+C03,negative adjective,signal stable,signal unstable,CONTRADICTORY
+U03,voltage units,voltage 5 v,voltage 5000 mv,EQUIVALENT
+V03,timestamp difference,motor temperature 80 c at 10:00,motor temperature 80 c at 14:00,RELATED
+U04,compatible-unit same physical value,temperature 80 c,temperature 176 f,EQUIVALENT

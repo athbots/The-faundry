@@ -1,0 +1,8 @@
+{
+  "validation": "PV-17 Concurrency, Stale-State & Persistence Integrity",
+  "status": "PASS",
+  "exit_code": 0,
+  "result": "PASS | PV-17 concurrency and persistence reference model\nSUMMARY | 12/12 concurrency invariants PASS",
+  "tests": 12,
+  "qualification": "reference model; production database durability/isolation, distributed consensus and crash recovery remain open"
+}
