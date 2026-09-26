@@ -1,0 +1,53 @@
+{
+  "validation_id": "PV-G05-G06-REFERENCE-001",
+  "validation_version": "1.0",
+  "status": "INTEGRATED REFERENCE MODEL — FOCUSED VALIDATION PASS",
+  "executed_at_utc": "2026-09-26T14:27:09Z",
+  "branch": "codex/g05-g06-change-migration",
+  "fetched_main_commit": "eb4c82e893afcbf52ed484249b0563f648c49160",
+  "tested_worktree_base_commit": "eb4c82e893afcbf52ed484249b0563f648c49160",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "dependencies": "Python standard library only"
+  },
+  "source_sha256": {
+    "runtime/control_boundary.py": "FC22D74C2711649C22CA6F43F2B7119238F8148053132C2A56F9D9E224BBE356",
+    "runtime/canonical_runtime.py": "81F7FB2656261DD5261FB0A0A2B5F55DD0BE1379DAFAA243F157FDC83E6BCCF8",
+    "tests/test_g05_g06_control.py": "F731A7CF8849FBD8F52CABBD7DF09E502EBD2C92F00BAF7E857841F9AF47242A",
+    "specifications/FS-OPS-005-CHANGE-CONTROL-V1.md": "E0E6FBE5EAAFFDDE433C478434505072E9D17BB243CB18C431A8523760B99C4A",
+    "specifications/FS-OPS-006-MIGRATION-CONTROL-V1.md": "5D5BF19D9CA6E3F03500DF38A4F99F30A9791F8667411686624A94ED7F8C2E4D"
+  },
+  "focused_validation": {
+    "command": "python -m unittest tests.test_g05_g06_control -v",
+    "result": "PASS",
+    "tests_run": 19,
+    "tests_passed": 19,
+    "tests_failed": 0,
+    "transcript": "production_validation/g05_g06_control/PV-G05-G06-test-output.txt"
+  },
+  "existing_regressions": [
+    {"path": "tests/test_pv17_concurrency_persistence.py", "exit_code": 0, "summary": "12/12 PASS"},
+    {"path": "production_validation/pv16_test.py", "exit_code": 0, "summary": "12/12 PASS"},
+    {"path": "production_validation/pv16_failure_recovery_test.py", "exit_code": 0, "summary": "12/12 PASS"},
+    {"path": "tests/test_pv15_cross_layer_integration.py", "exit_code": 0, "summary": "12/12 PASS"},
+    {"path": "tests/test_c018_authority.py", "exit_code": 1, "summary": "1/6 PASS; five pre-existing Capability constructor TypeErrors"},
+    {"path": "tests/test_c019_capability_issuance.py", "exit_code": 0, "summary": "5/5 PASS"},
+    {"path": "production_validation/pv06_operations_rollback/test_pv06_operations_rollback.py", "exit_code": 0, "summary": "8/8 PASS"},
+    {"path": "production_validation/pv02_failure_injection/test_pv02_failure_injection.py", "exit_code": 1, "summary": "ImportError: missing foundry_core package"},
+    {"path": "production_validation/pv03_recovery/test_pv03_recovery.py", "exit_code": 1, "summary": "ImportError: missing foundry_core package"}
+  ],
+  "integration_boundary": {
+    "canonical_runtime_injection": "PASS",
+    "storage_and_audit": "SQLite single-transaction reference boundary with hash-linked history and audit references",
+    "g09_g02_binding": "NOT PRESENT IN FETCHED MAIN; production adapter integration remains open",
+    "github_actions": "Focused unittest workflow added; remote workflow result not yet observed"
+  },
+  "limitations": [
+    "No G-09 persistence or G-02 audit implementation was present in the fetched main tree; the candidate ZIPs were not present in this checkout. The new SQLite implementation is a reference backend and exposes a boundary port for later adapter binding.",
+    "Authority is injected and no Founder delegation, migration authority, distributed consistency model, governance weight, or certification threshold was selected.",
+    "Focused validation does not establish C1/C2/C3 or production certification."
+  ],
+  "production_certification": "NOT CERTIFIED"
+}

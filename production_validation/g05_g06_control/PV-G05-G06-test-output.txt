@@ -1,0 +1,28 @@
+Validation run: 2026-09-26T14:27:09Z (see PV-G05-G06-MANIFEST.json for source hashes)
+Branch: codex/g05-g06-change-migration
+Baseline commit fetched from origin/main: eb4c82e893afcbf52ed484249b0563f648c49160
+Runtime: Python 3.12.14, Windows 11 10.0.26200, AMD64
+
+FOCUSED G-05/G-06
+Command: python -m unittest tests.test_g05_g06_control -v
+Expected/current result: 19 tests, exit 0
+Coverage includes unauthorized change and migration; independent verification; unverified release denial; failed-change reconstruction; scope and provenance mutation; exact retry idempotency; migration precondition and post-integrity failures; failure history; rollback versus compensation; irreversible migration rollback denial; atomic migration and audit history.
+
+EXISTING REGRESSION SCRIPTS
+tests/test_pv17_concurrency_persistence.py: exit 0; 12/12 PASS
+production_validation/pv16_test.py: exit 0; 12/12 PASS
+production_validation/pv16_failure_recovery_test.py: exit 0; 12/12 PASS
+tests/test_pv15_cross_layer_integration.py: exit 0; 12/12 PASS
+tests/test_c018_authority.py: exit 1; 1/6 PASS, 5 fail with TypeError: Capability.__init__() missing 1 required positional argument: 'capability'
+tests/test_c019_capability_issuance.py: exit 0; 5/5 PASS
+production_validation/pv06_operations_rollback/test_pv06_operations_rollback.py: exit 0; 8/8 PASS
+production_validation/pv02_failure_injection/test_pv02_failure_injection.py: exit 1; import failure: No module named 'foundry_core'
+production_validation/pv03_recovery/test_pv03_recovery.py: exit 1; import failure: No module named 'foundry_core'
+
+The C018, PV-02, and PV-03 outcomes are unrelated to the G-05/G-06 changes:
+their files and referenced modules were not changed in this branch. The exact
+commands above are reproducible from the repository root with Python 3.12+.
+
+Qualification: local reference validation only. No GitHub Actions run, production
+G-09/G-02 adapter integration, C1/C2/C3 decision, or production certification is
+claimed by this transcript.

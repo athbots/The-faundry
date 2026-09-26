@@ -19,6 +19,8 @@ This page is a dated status snapshot, not a new ratification. Where a summary co
 | DEC | **Validated reference models** | FS-DEC-001/002 headers record reference-model validation; exact CFO/TEAM weights remain unratified | `specifications/FS-DEC-001-DECISION-BOUNDARY-V1.md`; `OVERALL-PROGRESS-LEDGER.json` |
 | INQ | **Mixed: proposals and validated reference model** | FS-INQ-001–004 remain proposal/engineering validation; FS-INQ-005 is a validated reference model | Individual FS-INQ files; production transaction guarantees remain open |
 | Cross-layer recovery and persistence | **Reference validation only** | PV-16 and PV-17 passes apply to stated reference-model invariants | PV-16/PV-17 manifests; production infrastructure properties remain open |
+| G-05 Change Control | **Integrated reference model — focused tests pass** | Lifecycle, scope/provenance integrity, independent verification, release gate, durable history, and audit linkage are exercised through an injected runtime control boundary | `specifications/FS-OPS-005-CHANGE-CONTROL-V1.md`; `production_validation/g05_g06_control/`; production G-09/G-02 binding and authority delegation remain open |
+| G-06 Migration Control | **Integrated reference model — focused tests pass** | Authorization, atomic SQLite migration plus history/audit, integrity verification, idempotency, and reversible rollback semantics are exercised | `specifications/FS-OPS-006-MIGRATION-CONTROL-V1.md`; `production_validation/g05_g06_control/`; production storage, authority, and recovery remain open |
 | Production certification | **NOT CERTIFIED** | A test pass or ratified semantic boundary does not certify deployed production behavior | `OVERALL-PROGRESS-LEDGER.json`; open gates listed there and in REAL-SEM-01 |
 
 ## Reconciliation notes
@@ -35,4 +37,5 @@ This page is a dated status snapshot, not a new ratification. Where a summary co
 - Execute REAL-SEM-01 with representative, independently adjudicated OBS data and the acceptance decisions required by its charter.
 - Establish exact numerical governance parameters before cases require them.
 - Define and validate production persistence, isolation, crash recovery, distributed coordination, and real execution safety.
+- Bind the G-05/G-06 reference control contract to the authoritative G-09 persistence and G-02 audit implementations when those implementations are present and approved; the current branch supplies a SQLite reference boundary only.
 - Decide the authoritative release source commit and full manifest for Genesis, then define the release process for post-Genesis engineering work.

@@ -23,5 +23,8 @@
 "FS-INQ-005","specifications/FS-INQ-005-SUPERSESSION-CONCURRENCY-V1.md","VALIDATED REFERENCE MODEL","Document status header","Production distributed transaction guarantees remain open"
 "FS-INT-003","specifications/FS-INT-003-FAILURE-RECOVERY-V1.md","VALIDATED REFERENCE MODEL","Document status header","Production recovery and real infrastructure rollback remain open"
 "FS-INT-004","specifications/FS-INT-004-CONCURRENCY-PERSISTENCE-V1.md","REFERENCE MODEL","Document scope and qualification","Production database guarantees remain open"
+"FS-OPS-005","specifications/FS-OPS-005-CHANGE-CONTROL-V1.md","CANDIDATE REFERENCE SPECIFICATION","G-05 focused reference implementation tests","Production G-09/G-02 binding and change-authority delegation remain open; not certified"
+"FS-OPS-006","specifications/FS-OPS-006-MIGRATION-CONTROL-V1.md","CANDIDATE REFERENCE SPECIFICATION","G-06 focused reference implementation tests","Production G-09/G-02 binding, migration authority and production recovery remain open; not certified"
+"G05-G06-REFERENCE-VALIDATION","production_validation/g05_g06_control/PV-G05-G06-MANIFEST.json","INTEGRATED REFERENCE MODEL — FOCUSED VALIDATION PASS","Manifest and reproducible focused test output","Not production integration or C1/C2/C3 certification"
 "PV-17","production_validation/pv17_concurrency_persistence/PV17-MANIFEST.json","PASS — 12/12 REFERENCE INVARIANTS","PV-17 manifest","Not production durability/isolation, consensus, crash-recovery, or execution certification"
 "PRODUCTION-CERTIFICATION","OVERALL-PROGRESS-LEDGER.json","NOT CERTIFIED","Overall progress ledger","Open production gates remain explicit in the ledger"

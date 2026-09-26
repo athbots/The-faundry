@@ -24,6 +24,11 @@
     "Cross-layer failure and persistence": "Reference-model validation only; see PV-16 and PV-17 manifests"
   },
   "validation": {
+    "G05_G06_change_migration_reference": {
+      "status": "INTEGRATED REFERENCE MODEL — FOCUSED VALIDATION PASS",
+      "manifest": "production_validation/g05_g06_control/PV-G05-G06-MANIFEST.json",
+      "qualification": "SQLite reference boundary only; no production G-09 persistence/G-02 audit binding; not C1/C2/C3 certified."
+    },
     "PV-17 Concurrency / Stale-State / Persistence": {
       "status": "PASS",
       "tests": "12/12 reference-model invariants",
@@ -40,7 +45,9 @@
       "crash recovery and backup/restore behavior",
       "real execution safety",
       "exact governance weights",
-      "REAL-SEM-01 representative semantic validation"
+      "REAL-SEM-01 representative semantic validation",
+      "production G-09 persistence and G-02 audit binding for change/migration controls",
+      "approved change and migration authority delegation"
     ]
   }
 }

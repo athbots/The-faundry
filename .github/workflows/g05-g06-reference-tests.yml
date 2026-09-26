@@ -1,0 +1,20 @@
+name: G-05 G-06 focused reference tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-reference-tests:
+    name: Focused G-05 G-06 reference validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Run focused reference tests
+        run: python -m unittest tests.test_g05_g06_control -v
