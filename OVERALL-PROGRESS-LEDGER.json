@@ -24,6 +24,12 @@
     "Cross-layer failure and persistence": "Reference-model validation only; see PV-16 and PV-17 manifests"
   },
   "validation": {
+    "G07_G08_crash_recovery_reference": {
+      "status": "INTEGRATED SQLITE REFERENCE CANDIDATE — REPOSITORY-OWNED TESTS PASS; NOT CERTIFIED",
+      "specification": "specifications/FS-INT-008-CRASH-RECOVERY-BOUNDARY-V0.1.md",
+      "implementation": "runtime/crash_recovery_boundary.py",
+      "qualification": "Candidate ZIP is unavailable in this checkout; the supplied 15/15 candidate result has not been reproduced. The separately authored repository suite is recorded in production_validation/g07_g08_crash_recovery/. Local SQLite reference only; no production power-loss, G-09/G-02, or distributed consistency claim."
+    },
     "G07_G08_evidence_reference": {
       "status": "INTEGRATED REFERENCE CANDIDATE — FOCUSED VALIDATION PASS; NOT CERTIFIED",
       "specification": "specifications/FS-CERT-008-CERTIFICATION-EVIDENCE-V1.md",

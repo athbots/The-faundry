@@ -49,6 +49,10 @@ def _digest(value: Any) -> str:
     return hashlib.sha256(_json(value).encode("utf-8")).hexdigest()
 
 
+def _state_hash(document: dict) -> str:
+    return _digest({key: value for key, value in document.items() if key != "state_hash"})
+
+
 class SQLiteControlBoundary:
     """One transaction boundary for aggregate state, immutable history and audit."""
 
@@ -88,6 +92,8 @@ class SQLiteControlBoundary:
 
     def create(self, kind: str, object_id: str, document: dict, request_key: str) -> dict:
         fingerprint = _digest({"operation": "create", "document": document})
+        document = {**document, "version": 0}
+        document["state_hash"] = _state_hash(document)
         with self._session() as db:
             db.execute("BEGIN IMMEDIATE")
             found = db.execute(
@@ -110,6 +116,7 @@ class SQLiteControlBoundary:
                 "authority_ref": document["provenance"]["authority_ref"],
                 "scope_digest": _digest(document["scope"]),
                 "provenance_digest": _digest(document["provenance"]), "event": "CREATED",
+                "state_hash": document["state_hash"],
                 "audit_ref": f"AUDIT:{kind}:{object_id}:0",
             }
             db.execute("INSERT INTO control_aggregates VALUES(?,?,0,?)", (kind, object_id, _json(document)))
@@ -158,11 +165,13 @@ class SQLiteControlBoundary:
             for field in ("implementer", "authorization_ref", "verifier"):
                 if field in (extra or {}):
                     document[field] = (extra or {})[field]
+            document["state_hash"] = _state_hash(document)
             event = {
                 "kind": kind, "object_id": object_id, "version": document["version"],
                 "from": expected_state, "to": new_state, "actor": actor,
                 "authority_ref": authority_ref, "scope_digest": document["scope_digest"],
                 "evidence": evidence or {}, "details": extra or {},
+                "state_hash": document["state_hash"],
                 "audit_ref": f"AUDIT:{kind}:{object_id}:{document['version']}:{request_key or 'transition'}",
             }
             db.execute("UPDATE control_aggregates SET version=?,document=? WHERE kind=? AND object_id=?",
@@ -248,10 +257,12 @@ class SQLiteControlBoundary:
         prior_state = document["state"]
         document["state"] = state
         document["version"] = version
+        document["state_hash"] = _state_hash(document)
         event = {"kind": "G06", "object_id": document["identity"], "version": version,
                  "from": prior_state, "to": state, "actor": actor,
                  "authority_ref": authority_ref, "scope_digest": document["scope_digest"],
-                 "details": details, "audit_ref": details["audit_ref"]}
+                 "details": details, "state_hash": document["state_hash"],
+                 "audit_ref": details["audit_ref"]}
         db.execute("UPDATE control_aggregates SET version=?,document=? WHERE kind='G06' AND object_id=?",
                    (version, _json(document), document["identity"]))
         self._append_event(db, "G06", document["identity"], version, event)
@@ -300,7 +311,8 @@ class SQLiteControlBoundary:
         """Verify append-only events reconstruct the stored terminal snapshot."""
         events = self.history(kind, object_id)
         document = self.get(kind, object_id)
-        if not events or events[0].get("version") != 0 or events[0].get("from") is not None:
+        if (not events or events[0].get("version") != 0 or
+                events[0].get("from") is not None or not events[0].get("audit_ref")):
             raise IntegrityFailure("control history has no valid creation event")
         state = events[0].get("to")
         for expected_version, event in enumerate(events[1:], start=1):
@@ -310,6 +322,13 @@ class SQLiteControlBoundary:
             state = event.get("to")
         if document.get("version") != len(events) - 1 or document.get("state") != state:
             raise IntegrityFailure("stored snapshot does not match reconstructed history")
+        terminal_hash = events[-1].get("state_hash")
+        document_hash = document.get("state_hash")
+        if terminal_hash is not None:
+            if not document_hash or document_hash != terminal_hash or document_hash != _state_hash(document):
+                raise IntegrityFailure("stored state hash does not match reconstructed history")
+        elif document_hash is not None:
+            raise IntegrityFailure("state hash is not linked to the terminal audit event")
         return document
 
 class ChangeControl:
