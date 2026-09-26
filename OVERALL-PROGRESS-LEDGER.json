@@ -25,9 +25,10 @@
   },
   "validation": {
     "G07_G08_crash_recovery_reference": {
-      "status": "INTEGRATED SQLITE REFERENCE CANDIDATE — REPOSITORY-OWNED TESTS PASS; NOT CERTIFIED",
+      "status": "INTEGRATED SQLITE REFERENCE CANDIDATE — 18/18 FOCUSED AND 95/95 REGRESSION TESTS PASS; NOT CERTIFIED",
       "specification": "specifications/FS-INT-008-CRASH-RECOVERY-BOUNDARY-V0.1.md",
       "implementation": "runtime/crash_recovery_boundary.py",
+      "result": "production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md",
       "qualification": "Candidate ZIP is unavailable in this checkout; the supplied 15/15 candidate result has not been reproduced. The separately authored repository suite is recorded in production_validation/g07_g08_crash_recovery/. Local SQLite reference only; no production power-loss, G-09/G-02, or distributed consistency claim."
     },
     "G07_G08_evidence_reference": {
