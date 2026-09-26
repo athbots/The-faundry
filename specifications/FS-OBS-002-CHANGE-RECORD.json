@@ -1,8 +1,20 @@
 {
   "change_id": "FS-OBS-002",
-  "status": "IMPLEMENTED_BUT_BLOCKED",
+  "status": "RATIFIED_WITH_QUALIFICATION",
   "baseline": "FS-OBS-001 G0.3 frozen architecture",
   "reason": "PV-05 exposed four semantic safety defects",
-  "tests_passed": false,
-  "next_gate": "integrated regression then Founder/CISA ratification"
+  "tests_passed": true,
+  "decision_reference": "DEC-OBS-002",
+  "decision_effective_date": "2026-08-16",
+  "decision_scope": "canonical OBS semantic safety boundary",
+  "qualification": "not production-grade general semantic certification",
+  "next_gate": "REAL-SEM-01",
+  "status_history": [
+    {
+      "status": "IMPLEMENTED_BUT_BLOCKED",
+      "tests_passed": false,
+      "state": "historical pre-ratification record"
+    }
+  ],
+  "reconciliation_note": "Current status reflects DEC-OBS-002. The separate FS-OBS-001 G0.3 state-machine ratification remains pending."
 }

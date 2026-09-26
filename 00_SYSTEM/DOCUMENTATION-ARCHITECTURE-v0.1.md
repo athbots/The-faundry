@@ -2,9 +2,11 @@
 
 - **Document ID:** FND-DOC-ARCH-001
 - **Version:** 0.1
-- **Status:** Draft for Founder review
+- **Status:** Superseded — historical draft
 - **Baseline:** `main` at `dd4676afe15053eedff96747f8195a7472cdcb6b` (2026-08-24)
 - **Authority boundary:** This document is subordinate to `00_SYSTEM/REPOSITORY-CHARTER.md`, `CONST-001`, `IP-001`, and `FM-001`.
+
+> **Lifecycle notice (2026-09-26):** Superseded by [`DOCUMENTATION-ARCHITECTURE-v1.0.md`](DOCUMENTATION-ARCHITECTURE-v1.0.md). Retained as the initial draft and traceability record; v1.0 is the current repository-organization policy.
 
 ## 1. Purpose
 

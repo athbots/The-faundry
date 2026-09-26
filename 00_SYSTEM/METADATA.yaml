@@ -1,7 +1,11 @@
 repository:
   name: The Foundry
-  release: GENESIS-G0.1
-  status: frozen-foundation
+  foundation_release: GENESIS-G0.1
+  foundation_status: frozen
+  main_branch_status: post-genesis engineering records present; production not certified
+  documentation_architecture: v1.0
+  documentation_status_register: DOCUMENT-REGISTER.csv
+  institutional_status_record: INSTITUTIONAL-STATUS.md
 authority:
   constitution: CONST-001
   institutional_physics: IP-001
@@ -15,5 +19,13 @@ required_traceability:
   - Relationships
   - Validation
   - History
-downstream_next:
+genesis_release_next_target:
   specification: FS-OBS-001
+  interpretation: historical target recorded by Genesis G-0.1; not a complete current work plan
+current_open_gates:
+  - OBS state-machine ratification
+  - REAL-SEM-01 representative semantic validation
+  - production database durability and isolation
+  - distributed coordination and crash recovery
+  - real execution safety
+  - exact governance weights

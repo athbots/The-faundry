@@ -1,4 +1,46 @@
 {
-  "PV-17 Concurrency / Stale-State / Persistence": "PASS",
-  "Production certification": "NOT CERTIFIED \u2014 production database durability/isolation, distributed consensus, real execution safety, exact governance weights, and REAL-SEM-01 remain open"
+  "ledger_version": 2,
+  "status_date": "2026-09-26",
+  "basis_commit": "b98ed49ccb1e75b941e8611151828788b05d198d",
+  "status_register": "00_SYSTEM/DOCUMENT-REGISTER.csv",
+  "institutional_status": "00_SYSTEM/INSTITUTIONAL-STATUS.md",
+  "foundation": {
+    "release_id": "GENESIS-G0.1",
+    "status": "FOUNDATION FROZEN",
+    "qualification": "Later main-branch files are not automatically included in Genesis G-0.1. The release manifest does not identify a source commit or complete file list."
+  },
+  "documentation_architecture": {
+    "version": "1.0",
+    "status": "ACTIVE REPOSITORY-ORGANIZATION POLICY",
+    "path": "00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md",
+    "qualification": "Does not ratify domain specifications or certify production."
+  },
+  "domain_authority": {
+    "OBS state-machine vocabulary": "RATIFICATION PENDING — see canonical_obs/RATIFICATION-DECISION-REQUIRED.md",
+    "OBS semantic-safety boundary": "FS-OBS-002 v1 RATIFIED by DEC-OBS-002 within its stated scope",
+    "REAL-SEM-01": "MANDATORY FUTURE GATE — NOT EXECUTED",
+    "DEC": "FS-DEC-001/002 VALIDATED REFERENCE MODELS; exact CFO/TEAM weights remain unratified",
+    "INQ": "FS-INQ-001–004 PROPOSAL / ENGINEERING VALIDATION; FS-INQ-005 VALIDATED REFERENCE MODEL",
+    "Cross-layer failure and persistence": "Reference-model validation only; see PV-16 and PV-17 manifests"
+  },
+  "validation": {
+    "PV-17 Concurrency / Stale-State / Persistence": {
+      "status": "PASS",
+      "tests": "12/12 reference-model invariants",
+      "manifest": "production_validation/pv17_concurrency_persistence/PV17-MANIFEST.json",
+      "qualification": "Not production database durability/isolation, distributed consensus, crash-recovery, or real-execution certification.",
+      "evidence_note": "Raw test output contains a post-summary spreadsheet-runtime warmup timeout; the manifest reports exit_code 0 and 12/12 PASS. Clarify or remove unrelated runner noise before treating the output as a clean reproducibility record."
+    }
+  },
+  "production_certification": {
+    "status": "NOT CERTIFIED",
+    "open_gates": [
+      "production database durability and isolation",
+      "distributed consensus or coordination guarantees",
+      "crash recovery and backup/restore behavior",
+      "real execution safety",
+      "exact governance weights",
+      "REAL-SEM-01 representative semantic validation"
+    ]
+  }
 }

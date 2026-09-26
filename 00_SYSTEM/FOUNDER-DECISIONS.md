@@ -1,42 +1,39 @@
 # Founder Decision Record — Documentation and Governance
 
 - **Record ID:** FND-DEC-DOC-001
-- **Version:** 0.1
-- **Status:** Open — Founder decision required
+- **Version:** 1.0
+- **Status:** Partially resolved — FD-DOC-001 closed; FD-DOC-002 through FD-DOC-005 remain open
 - **Opened against:** `main` at `dd4676afe15053eedff96747f8195a7472cdcb6b`
-- **Related record:** [`DOCUMENTATION-ARCHITECTURE-v0.1.md`](DOCUMENTATION-ARCHITECTURE-v0.1.md)
+- **Related record:** [`DOCUMENTATION-ARCHITECTURE-v1.0.md`](DOCUMENTATION-ARCHITECTURE-v1.0.md)
 
-This is a decision register, not a ratification. No option below is adopted. The current Repository Charter and artifact-level approval history continue to control while these items are open.
+This register records decisions that remain open after Documentation Architecture v1. FD-DOC-001 is closed by the explicit Founder instruction to implement v1 and reconcile the tree, read together with the earlier instruction to preserve existing implementation directories. The current Repository Charter and artifact-level approval history continue to control other open matters.
 
 ## FD-DOC-001 — Repository's physical and logical architecture
 
-**Question:** Is the directory layout in the root README a ratified target, or should the existing physical layout become the architecture baseline?
+**Question:** Resolved for v1: how should the intended logical taxonomy relate to the current physical tree?
 
-**Evidence:** The README lists `02_SPECIFICATIONS/` through `06_PROJECTS/`; those directories are absent from inspected `main`. Specs are under `specifications/`; implementation and validation have top-level directories.
+**Evidence:** At the v1 baseline, the README-described `02_SPECIFICATIONS/` through `06_PROJECTS/` folders were absent. Specification files, implementation, and validation artifacts occupy different current paths. The Founder directed implementation of Architecture v1 and preservation of existing implementation directories.
 
-**Options:**
-- Ratify the README layout as target and approve a staged migration plan.
-- Amend the README to describe the existing tree and defer target folder creation until governed objects require it.
-- Adopt a third logical architecture without requiring immediate physical migration.
+**Decision:** Adopt the existing physical tree as the navigation baseline. Retain `02_SPECIFICATIONS/` through `06_PROJECTS/` as logical classes only; do not create empty folders or move/rename current implementation directories. Any later physical migration requires a separate decision and a traceable mapping, dependency check, validation, and rollback plan.
 
-**CISA recommendation:** Choose a logical architecture first; treat physical paths as representations and migrate only when a traceable mapping, dependency check, and rollback plan exist.
+**Authority / date:** Founder direction in this task, with the earlier explicit preservation constraint; 2026-09-26.
 
-**Trade-off:** A future uniform taxonomy improves onboarding and findability; migrating prematurely can obscure history, break tooling and references, and produce empty or misleading folders.
+**Trade-off accepted:** The logical categories improve future classification while physical preservation protects code imports, links, and provenance; readers must consult the actual-tree map until a separately approved migration.
 
-**Decision:** Pending Founder. **Decision date / authority:** Pending.
+**Implementation:** `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md` and updated root `README.md`.
 
 ## FD-DOC-002 — Normative authority of current specifications
 
-**Question:** Which existing specifications are approved for implementation, and which remain candidates, drafts, historical records, or superseded?
+**Question:** Beyond existing artifact-specific approval decisions, which specifications are authorized for implementation, and who may authorize them?
 
-**Evidence:** README and Genesis release notes say OBS/INQ/EVD/DEC/CAP/STD/SPEC specifications are not yet authoritative in that release, while current `main` includes many `FS-*` files and implementation/validation work. `canonical_obs/RATIFICATION-DECISION-REQUIRED.md` says OBS ratification is still required. The current state cannot be inferred safely from filenames or code.
+**Evidence:** The Genesis release notes describe authority at Genesis G-0.1. Later records include an explicit active ratification of FS-OBS-002 v1 by DEC-OBS-002; older FS-OBS-002 candidate/change records had not reflected that decision. The separate OBS state-machine ratification request remains open. Other FS-DEC/INQ/INT records declare mixed proposal or validated-reference-model states. A repository-wide implementation-authorization matrix does not exist.
 
 **Options:**
 - Ratify individually by specification with explicit version and dependencies.
 - Ratify an approved set under a single decision, with per-document exceptions.
 - Preserve current work as non-normative until each decision is made.
 
-**CISA recommendation:** Use artifact-level decisions and record status per version; maintain a compact index of implementation-authorized versions. Do not infer ratification from merging or passing tests.
+**CISA recommendation:** Maintain artifact-level decisions and the source-linked register; do not infer ratification or implementation authorization from a merge, filename, or passing test. Explicitly resolve the state-machine/semantic-boundary composition and identify the authority for each new approval.
 
 **Trade-off:** Individual decisions take more governance effort but reduce authority ambiguity and make supersession precise.
 

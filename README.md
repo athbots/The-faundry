@@ -2,46 +2,42 @@
 
 Institutional operating system for the Institution.
 
-## Genesis G-0.1
+## Authority and foundation
 
-This repository contains the frozen Phase A foundation of The Foundry.
+The Genesis G-0.1 release records the Phase A foundation as frozen. Its release scope is the foundation artifacts named in its release notes; later engineering and governance records on `main` are not automatically part of that release.
 
-### Authority hierarchy
+**Authority hierarchy:** `CONST-001 → IP-001 → FM-001 → ratified type specifications → ratified object instances`
 
-CONST-001 → IP-001 → FM-001 → Object Specifications → Object Instances
+**Institutional cognition flow:** Reality → Observation → Triage → Inquiry → Evidence → Knowledge → Governance → Decision → Execution → Reality Feedback
 
-### Institutional cognition flow
+Frozen foundation artifacts are not edited in place to conceal change. Proposals must declare dependencies and authority, preserve history, and use the revision process for the affected layer. A path, filename, commit, or passing test does not by itself create institutional authority. Files are representations; `ObjectID` is the institutional identity for governed objects.
 
-Reality → Observation → Triage → Inquiry → Evidence → Knowledge → Governance → Decision → Execution → Reality Feedback
+## Current repository status
 
-### Phase A status
+- Foundation: **Frozen — Genesis G-0.1**.
+- Documentation architecture: **Active — v1.0**; see [Documentation Architecture](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md).
+- OBS semantic-safety boundary: **FS-OBS-002 v1 ratified within its stated scope** by DEC-OBS-002.
+- OBS state-machine vocabulary: **ratification pending**; this is a separate decision from semantic-safety ratification.
+- REAL-SEM-01: **mandatory future gate, not executed**.
+- Production certification: **NOT CERTIFIED**. PV-17's 12/12 reference-model invariants do not establish production database or execution guarantees.
 
-**COMPLETE — Genesis G-0.1 Foundation Frozen**
+See [Institutional and Repository Status](00_SYSTEM/INSTITUTIONAL-STATUS.md), the [Document Register](00_SYSTEM/DOCUMENT-REGISTER.csv), the [Founder Decision Record](00_SYSTEM/FOUNDER-DECISIONS.md), and [Overall Progress Ledger](OVERALL-PROGRESS-LEDGER.json) for source-linked details and open gates.
 
-### Rules for downstream work
+## Current physical tree
 
-1. Do not modify frozen foundation files directly.
-2. Propose changes through a revision/decision process.
-3. New specifications must declare dependencies.
-4. New objects must conform to FM-001 and their type specification.
-5. A contradiction with the frozen foundation must be surfaced before downstream work continues.
-6. Files are representations; ObjectID is the institutional identity.
+These are the directories that exist in the repository today:
 
-## Repository layout
-
-- `00_SYSTEM/` — repository operating rules and metadata
+- `00_SYSTEM/` — repository control, architecture, status, and repository-level decisions
 - `01_FOUNDATION/` — constitutional and architectural foundation
-- `02_SPECIFICATIONS/` — object/type specifications
-- `03_OBJECTS/` — instantiated institutional objects
-- `04_GOVERNANCE/` — governance mechanisms
-- `05_CAPABILITIES/` — capability system
-- `06_PROJECTS/` — project execution
-- `07_RELEASES/` — released snapshots
+- `07_RELEASES/` — release snapshots
 - `99_TEMPLATES/` — controlled templates
-- Documentation control — [Documentation Architecture and Control Index](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v0.1.md) and [Founder Decision Record](00_SYSTEM/FOUNDER-DECISIONS.md)
+- `canonical_obs/` — OBS code, tests, manifests, and state-machine ratification record
+- `dec_core/`, `inq_core/`, `inq_interface/`, `runtime/` — implementation
+- `production_validation/`, `tests/` — validation plans, manifests, and tests
+- `specifications/` — specification records and domain decisions
 
-The directory map above is the proposed logical organization, not a complete description of the current physical tree. The current tree and open architecture decisions are indexed in `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v0.1.md`.
+`02_SPECIFICATIONS/`, `03_OBJECTS/`, `04_GOVERNANCE/`, `05_CAPABILITIES/`, and `06_PROJECTS/` remain logical classes, not current physical directories. Architecture v1 does not move, delete, or rename existing implementation directories.
 
-## Current downstream target
+## Genesis G-0.1 next target
 
-`FS-OBS-001 — Observation Object Specification`
+The Genesis release notes recorded `FS-OBS-001 — Observation Object Specification` as the next target at that release. Current open authority and engineering gates are listed in the status page; do not treat the historical target line as a complete current work plan.
