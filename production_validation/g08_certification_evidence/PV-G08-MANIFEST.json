@@ -1,0 +1,88 @@
+{
+  "validation_id": "PV-G08-EVIDENCE-BOUNDARY-001",
+  "validation_version": "1.0",
+  "status": "INTEGRATED REFERENCE CANDIDATE — 20/20 G-08 TESTS PASS; NOT CERTIFIED",
+  "recorded_at_utc": "2026-09-26T16:20:10Z",
+  "branch": "codex/g05-g06-change-migration",
+  "tested_source_commit": "be5c813965f1d3fb8747f14c1db2e66f78cc6279",
+  "baseline_commit": "1484505c3b299b77bb4b5db10ed4907bc7486494",
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "architecture": "AMD64",
+    "python": "3.12.14",
+    "dependencies": "Python standard library only"
+  },
+  "source_sha256": {
+    "runtime/certification_evidence.py": "01ECAC5026845F42961C6EE219228F11716796C93E1BDC0CE4643D048A6412E5",
+    "runtime/g07_g08_evidence_gate.py": "FAB18032BAEDC1E346E9D9C34507F92B0B78005AA561180FA5FF83931D27C713",
+    "runtime/canonical_runtime.py": "7C817F9C3D7003E35798B96D75964B23D19189BCF26259FAD4B7599D44AF5BF8",
+    "runtime/control_boundary.py": "C9579D418DE70ACE4261A80A0E0F05F4B9FD701194EC46F55D22C8B3A03575BC",
+    "tests/test_g08_certification_evidence.py": "6CC17202A0FCFCADF5E539168EF4C6091D7130CB167731E21E486F80515E333A",
+    "tests/test_g05_g06_control.py": "F731A7CF8849FBD8F52CABBD7DF09E502EBD2C92F00BAF7E857841F9AF47242A",
+    "tests/test_pv15_cross_layer_integration.py": "F16AD4DDE7844700ECEBF8A088C4D06F07209EC8179AAD6BBE0BEC4E9D3521A8",
+    "tests/test_pv17_concurrency_persistence.py": "B33CEC1998BCF59954E52E359781B955A6D530C24A7C103C474AB11D7A7B9FEE",
+    "specifications/FS-CERT-008-CERTIFICATION-EVIDENCE-V1.md": "B1396452BA61EFBD80DE762EBE7D1E379D8653DA50B7AE8B0435262F8C2D37CA",
+    "specifications/FS-INT-007-008-EVIDENCE-BOUNDARY-V1.md": "22DB923EF46D5990A55DEA96E82B6D0D88B1A0116B1EC57C83345C4179673F49",
+    "00_SYSTEM/FOUNDER-DECISIONS.md": "8F4F60959E3DD0D428027E3617C6E6250954A58798114DEE772373233C37FD7F",
+    "00_SYSTEM/INSTITUTIONAL-STATUS.md": "5C3BE302CCE6E297F2D1BA7A584AA95F179C02AA6DC0F33AE2DA776BDE6EA374",
+    "00_SYSTEM/DOCUMENT-REGISTER.csv": "C386B4901CD55D3B5C52EF946CE49527ED6F2FBA5C775E423382500FA1EE57A2",
+    "OVERALL-PROGRESS-LEDGER.json": "4EF11583D05B20E0A3602D515BE25AA61ECE3FDD6AAC4B386C2786972814FEE2"
+  },
+  "test_runs": [
+    {
+      "scope": "G-08 focused tests",
+      "command": "python -m unittest tests.test_g08_certification_evidence -v",
+      "exit_code": 0,
+      "tests_run": 20,
+      "tests_passed": 20,
+      "tests_failed": 0
+    },
+    {
+      "scope": "G-05/G-06 focused regression",
+      "command": "python -m unittest tests.test_g05_g06_control -v",
+      "exit_code": 0,
+      "tests_run": 19,
+      "tests_passed": 19,
+      "tests_failed": 0
+    },
+    {
+      "scope": "PV-15 cross-layer integration",
+      "command": "python tests/test_pv15_cross_layer_integration.py",
+      "exit_code": 0,
+      "tests_run": 12,
+      "tests_passed": 12,
+      "tests_failed": 0
+    },
+    {
+      "scope": "PV-17 concurrency/persistence",
+      "command": "python tests/test_pv17_concurrency_persistence.py",
+      "exit_code": 0,
+      "tests_run": 12,
+      "tests_passed": 12,
+      "tests_failed": 0
+    }
+  ],
+  "totals": {
+    "tests_run": 63,
+    "tests_passed": 63,
+    "tests_failed": 0
+  },
+  "transcript": "production_validation/g08_certification_evidence/PV-G08-test-output.txt",
+  "integration_boundary": {
+    "g08": "Separate evidence lifecycle uses the existing SQLite control persistence and hash-linked audit boundary.",
+    "g07": "Fail-closed adapter validates referenced G-08 records before invoking caller-owned transition/verification callbacks; no G-07 runtime candidate was present in this checkout.",
+    "g09_g02": "Production persistence/audit binding not present or established.",
+    "candidate_archives": "The referenced candidate archives were not available in the checkout or synced sources; reported SHA values are not byte-verified here."
+  },
+  "open_founder_decisions": [
+    "G-08 producer/verifier/acceptance authority and independence delegation",
+    "verification-method qualification",
+    "evidence retention and trust anchors",
+    "certification acceptance thresholds",
+    "G-07 runtime integration and durable callback boundary"
+  ],
+  "certification": {
+    "C1": "NOT CLAIMED",
+    "production": "NOT CERTIFIED"
+  }
+}

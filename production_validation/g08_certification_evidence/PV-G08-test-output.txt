@@ -1,0 +1,26 @@
+G-08 certification evidence reference validation
+Recorded: 2026-09-26T16:20:10Z
+Branch: codex/g05-g06-change-migration
+Tested source commit: be5c813965f1d3fb8747f14c1db2e66f78cc6279
+Environment: Windows-11-10.0.26200-SP0, AMD64, Python 3.12.14
+
+FOCUSED G-08
+Command: python -m unittest tests.test_g08_certification_evidence -v
+Result: exit 0; 20 tests run; 20 passed; 0 failed.
+
+G-05/G-06 REGRESSION
+Command: python -m unittest tests.test_g05_g06_control -v
+Result: exit 0; 19 tests run; 19 passed; 0 failed.
+
+EXISTING REGRESSION SCRIPTS
+Command: python tests/test_pv15_cross_layer_integration.py
+Result: exit 0; 12/12 integration invariants PASS.
+Command: python tests/test_pv17_concurrency_persistence.py
+Result: exit 0; 12/12 concurrency invariants PASS.
+
+TOTAL: 63 passed; 0 failed across the four focused/regression runs.
+
+Qualification: Local reference validation only. G-07 is represented by a
+fail-closed callback adapter because the G-07 candidate runtime is absent from
+this repository. G-09/G-02 production binding, candidate archive reconciliation,
+Founder authority decisions, C1, and production certification are not established.
