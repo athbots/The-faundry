@@ -24,6 +24,13 @@
     "Cross-layer failure and persistence": "Reference-model validation only; see PV-16 and PV-17 manifests"
   },
   "validation": {
+    "G07_G08_evidence_reference": {
+      "status": "INTEGRATED REFERENCE CANDIDATE — FOCUSED VALIDATION PASS; NOT CERTIFIED",
+      "specification": "specifications/FS-CERT-008-CERTIFICATION-EVIDENCE-V1.md",
+      "boundary": "specifications/FS-INT-007-008-EVIDENCE-BOUNDARY-V1.md",
+      "manifest": "production_validation/g08_certification_evidence/PV-G08-MANIFEST.json",
+      "qualification": "G-08 uses the existing SQLite control/audit boundary. The G-07 runtime is absent; the adapter gates a caller-owned callback only. G-09/G-02 production binding, certification authority/thresholds, and candidate ZIP reconciliation remain open."
+    },
     "G05_G06_change_migration_reference": {
       "status": "INTEGRATED REFERENCE MODEL — FOCUSED VALIDATION PASS",
       "manifest": "production_validation/g05_g06_control/PV-G05-G06-MANIFEST.json",
@@ -47,6 +54,9 @@
       "exact governance weights",
       "REAL-SEM-01 representative semantic validation",
       "production G-09 persistence and G-02 audit binding for change/migration controls",
+      "production G-09 persistence and G-02 audit binding for certification evidence",
+      "G-07 runtime integration for evidence-required resolution",
+      "G-08 authority, method qualification, retention, trust-anchor and acceptance decisions",
       "approved change and migration authority delegation"
     ]
   }

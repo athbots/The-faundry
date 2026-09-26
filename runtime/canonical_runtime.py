@@ -2,6 +2,8 @@ from canonical_obs.state_machine import CanonicalOBS
 from canonical_obs.authority import AuthorityService
 from canonical_obs.semantic_relation import rel
 from runtime.control_boundary import ChangeControl, MigrationControl
+from runtime.certification_evidence import CertificationEvidence
+from runtime.g07_g08_evidence_gate import EvidenceResolutionGate
 
 class CanonicalRuntime:
     def __init__(self, control_boundary=None, control_authorizer=None):
@@ -13,11 +15,15 @@ class CanonicalRuntime:
         self.history=self.authority.issue("history","HISTORY_ENGINE")
         self.change_control=None
         self.migration_control=None
+        self.certification_evidence=None
+        self.evidence_resolution_gate=None
         if control_boundary is not None:
             if control_authorizer is None:
                 raise ValueError("control_authorizer is required with a control boundary")
             self.change_control=ChangeControl(control_boundary, control_authorizer)
             self.migration_control=MigrationControl(control_boundary, control_authorizer)
+            self.certification_evidence=CertificationEvidence(control_boundary, control_authorizer)
+            self.evidence_resolution_gate=EvidenceResolutionGate(self.certification_evidence)
 
     def create_obs(self, source, raw_payload):
         return CanonicalOBS(source,raw_payload)

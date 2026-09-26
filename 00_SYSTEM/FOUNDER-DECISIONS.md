@@ -90,6 +90,23 @@ This register records decisions that remain open after Documentation Architectur
 
 **Decision:** Pending Founder. **Decision date / authority:** Pending.
 
+## FD-GOV-008-001 — Certification evidence authority and acceptance
+
+**Question:** Which roles may produce, independently verify, accept, retain, invalidate, and rely on G-08 evidence, and what approved rules govern those decisions?
+
+**Evidence:** The G-08 reference candidate records producer provenance, artifact digest, verification method, verifier, result, and audit history. This repository integration uses an injected authorization policy and a verifier-supplied PASS/FAIL result. It does not define role delegation, method qualification, retention, external trust anchors, or certification thresholds. The associated candidate archives were not available in this checkout for byte-level reconciliation.
+
+**Options:**
+- Approve a role and independence matrix, evidence classes, method requirements, and retention rules in a separate governance decision.
+- Continue with caller-injected authority and treat the implementation as a non-normative reference candidate until those decisions are made.
+- Reject or revise the proposed G-08 lifecycle before authorizing implementation.
+
+**CISA recommendation:** Keep this integration at reference-candidate status; separately ratify authority, evidence-method, retention, invalidation, and acceptance rules before certification use.
+
+**Trade-off:** An injected authority seam supports testing without silently selecting decision makers, but leaves the reference implementation unusable as a self-contained certification authority.
+
+**Decision:** Pending Founder. No numerical threshold or authority was inferred. **Decision date / authority:** Pending.
+
 ## Closure protocol
 
 For each decision, record the selected option or a custom ruling, rationale, authority, date, affected artifacts, implementation owner, and validation/release evidence. If the Founder rejects every option, preserve the decision as open and state the blocking condition. Update the architecture index only after the relevant decision is recorded.
