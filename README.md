@@ -38,6 +38,9 @@ Reality → Observation → Triage → Inquiry → Evidence → Knowledge → Go
 - `06_PROJECTS/` — project execution
 - `07_RELEASES/` — released snapshots
 - `99_TEMPLATES/` — controlled templates
+- Documentation control — [Documentation Architecture and Control Index](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v0.1.md) and [Founder Decision Record](00_SYSTEM/FOUNDER-DECISIONS.md)
+
+The directory map above is the proposed logical organization, not a complete description of the current physical tree. The current tree and open architecture decisions are indexed in `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v0.1.md`.
 
 ## Current downstream target
 
