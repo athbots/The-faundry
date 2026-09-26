@@ -1,79 +1,125 @@
 # The Foundry
 
-Institutional operating system for the Institution.
+The Foundry is an institutional operating system for a future engineering and scientific organization. It is intended to preserve how observations become investigated claims, authorized decisions, controlled action, and reviewable learning over time.
+
+The repository represents institutional records and executable models. It is not the institution itself. Its purpose is to keep information, evidence, authority, decisions, execution, and history distinct enough that people can inspect how a claim or action was formed and what remains uncertain.
 
 ## Authority and foundation
 
-The Genesis G-0.1 release records the Phase A foundation as frozen. Its release scope is the foundation artifacts named in its release notes; later engineering and governance records on `main` are not automatically part of that release.
+The authority hierarchy is:
 
-**Authority hierarchy:** `CONST-001 → IP-001 → FM-001 → ratified type specifications → ratified object instances`
+`CONST-001 → IP-001 → FM-001 → ratified type specifications → ratified object instances`
 
-**Institutional cognition flow:** Reality → Observation → Triage → Inquiry → Evidence → Knowledge → Governance → Decision → Execution → Reality Feedback
+Genesis G-0.1 records the Phase A foundation as frozen. Its release notes name the included artifacts; later engineering records are not automatically part of that release. The foundational documents and Genesis release records remain unchanged from the Genesis tag. The release notes also list Repository Metadata, which has since been updated for later repository state; the Genesis manifest has no source commit or per-file hashes to identify its exact original payload. The [curation audit](00_SYSTEM/REPOSITORY-CURATION-AUDIT-V0.1.md) records this provenance limitation without rewriting Genesis history.
 
-Frozen foundation artifacts are not edited in place to conceal change. Proposals must declare dependencies and authority, preserve history, and use the revision process for the affected layer. A path, filename, commit, or passing test does not by itself create institutional authority. Files are representations; `ObjectID` is the institutional identity for governed objects.
+A filename, directory, branch, commit, passing test, or AI-generated output does not create institutional authority. A path is a repository location, not an institutional ObjectID. Governance authority must be recorded by the appropriate decision source.
 
-## Current Engineering State
+## Operating model
 
-- The Genesis G-0.1 foundation remains **frozen**. Its release scope and historical records are preserved.
-- Documentation Architecture **v1.0 is active**; see [Documentation Architecture](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md).
-- The FS-OBS-002 semantic-safety boundary is **ratified within its stated scope** by DEC-OBS-002.
-- OBS state-machine vocabulary remains **ratification pending**.
-- REAL-SEM-01 remains **mandatory and unexecuted**.
-- G-05 Change Control is an **integrated reference model**, not production-certified.
-- G-06 Migration Control is an **integrated reference model**, not production-certified.
-- G-08 Certification Evidence is an **integrated reference candidate**, not ratified or certified.
-- The G-07 ↔ G-08 evidence boundary is a **fail-closed reference adapter**, not full authoritative G-07 integration.
-- G-07/G-08 crash recovery is an **integrated SQLite reference candidate**. Its [integration specification](specifications/FS-INT-008-CRASH-RECOVERY-BOUNDARY-V0.1.md) and [validation/provenance record](production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md) distinguish candidate validation from repository validation:
-  - Candidate archive SHA-256: `8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158`.
-  - Candidate validation: **15/15 independently reproduced**.
-  - Repository crash-recovery validation: **18/18 PASS**.
-  - Affected regression scope: **95/95 PASS**.
-  - Total repository-owned validation reported: **113/113 PASS**.
-- **C1 is NOT claimed.**
-- **Production certification is NOT claimed.** Reference validation results do not establish production guarantees or certification.
+`OBS → INQ → RESOLUTION → DEC → AUTHORIZATION → EXECUTION → VERIFICATION → OBS`
 
-See [Institutional and Repository Status](00_SYSTEM/INSTITUTIONAL-STATUS.md), the [Document Register](00_SYSTEM/DOCUMENT-REGISTER.csv), the [Founder Decision Record](00_SYSTEM/FOUNDER-DECISIONS.md), and [Overall Progress Ledger](OVERALL-PROGRESS-LEDGER.json) for source-linked status and decision records.
+This is a navigation model for the repository's work. It does not ratify a single lifecycle for every domain. G-07 discovery, for example, found no authoritative obligation runtime yet.
 
-## Current Open Gates
+| Term | Meaning in this repository |
+|---|---|
+| **Observation (OBS)** | A recorded perception of a phenomenon, condition, measurement, or event. It is not, by itself, an explanation. |
+| **Inquiry (INQ)** | Structured examination of observations and questions, with methods and work products recorded. |
+| **Evidence** | Observations evaluated for relevance and reliability against a claim or inquiry. Evidence can support or challenge a claim; it does not grant authority. |
+| **Knowledge** | An institutionally accepted model or conclusion supported sufficiently for its intended use. Its scope and uncertainty remain relevant. |
+| **Resolution** | The handling or disposition of an identified obligation or issue. The authoritative G-07 lifecycle and closure rules remain undecided. |
+| **Decision (DEC)** | An authorized selection of an action, constraint, allocation, or direction. Evidence and decision authority are distinct. |
+| **Authorization** | Explicit, role-based permission for a defined actor and scope to perform an action. |
+| **Execution** | The authorized action, with its scope, provenance, and resulting state recorded. |
+| **Verification** | An independent check of a specified result or state. A passing verification is evidence for its stated scope, not production certification. |
 
-1. Authoritative G-07 runtime integration.
+The foundation's institutional cognition flow remains recorded as Reality → Observation → Triage → Inquiry → Evidence → Knowledge → Governance → Decision → Execution → Reality Feedback. See [IP-001](01_FOUNDATION/IP/IP-001.md) and the [Repository Charter](00_SYSTEM/REPOSITORY-CHARTER.md).
+
+## Current institutional and engineering state
+
+This status is for the current curation branch. It combines the pushed G-07 discovery and FS-SYS-002 work while preserving their original commits. The changes have not been merged to `main`; `main` therefore does not yet contain those branch-only records. The status snapshot and progress ledger still cite the earlier `b98ed49ccb1e75b941e8611151828788b05d198d` basis commit; the curation audit identifies this stale or ambiguous basis metadata.
+
+| State | Current record |
+|---|---|
+| **Historical / frozen** | Genesis G-0.1 foundation remains frozen within its declared scope. The Genesis-era FS-OBS-001 next target is historical context, not the current roadmap. |
+| **Active repository policy** | Documentation Architecture v1.0 defines physical navigation, logical classes, status axes, and traceability. |
+| **Ratified, qualified** | FS-OBS-002 v1 semantic-safety boundary is ratified by DEC-OBS-002 within its stated scope. OBS state-machine vocabulary remains ratification pending. |
+| **Mandatory, not executed** | REAL-SEM-01 remains an unexecuted gate. |
+| **Candidate, not ratified** | FS-SYS-002 proposes artifact identity and naming rules. Its repository validation checks 15 core assertions; it does not change existing identity semantics or authorize renames. |
+| **Candidate, not ratified** | The FS-OPS-002 G-07 acceptance contract was reviewed from the verified handoff package and compared in the [G-07 discovery report](G07-AUTHORITATIVE-RUNTIME-DISCOVERY-V0.1.md). The candidate is not integrated as a specification or runtime. |
+| **Integrated reference model** | G-05 Change Control and G-06 Migration Control have SQLite reference implementations and focused validation. Production G-09/G-02 binding and authority delegation remain open. |
+| **Integrated reference candidate** | G-08 Certification Evidence has a separate evidence lifecycle using the existing SQLite control/audit boundary. It is not ratified or certified. |
+| **Fail-closed reference adapter** | The G-07 ↔ G-08 evidence gate validates caller-supplied evidence before invoking caller-owned callbacks. It is not full authoritative G-07 integration. |
+| **Integrated SQLite reference candidate** | G-07/G-08 crash recovery preserves atomic state-plus-audit behavior in the reference boundary. The candidate archive SHA-256 is `8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158`; its 15/15 result was independently reproduced. Repository validation is separately recorded as 18/18 crash tests, a 95/95 affected regression scope, and 113/113 total repository-owned tests in the [result record](production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md). |
+
+“Implemented” means repository code exists. “Candidate” means a proposed artifact or integration whose authority is not established. “Validated reference” means defined checks passed for the identified implementation and environment. “Ratified” requires an explicit decision record. “Certified” requires the competent authority's certification decision and evidence for its stated production scope. These states are separate.
+
+**C1 is NOT claimed. Production certification is NOT claimed.** No reference-model test result establishes production guarantees.
+
+## Open gates and Founder decisions
+
+The following gates remain open:
+
+1. Authoritative G-07 obligation lifecycle and runtime integration.
 2. Production G-09 persistence.
 3. Production G-02 audit.
-4. Crash and power-loss production guarantees.
-5. G-10 distributed consistency decision.
-6. REAL-SEM-01 execution.
-7. Exact governance parameters.
-8. G-08 certification authority, threshold, method, retention, and trust-anchor decisions.
+4. Production crash-recovery and power-loss guarantees.
+5. G-10 distributed-consistency decision.
+6. REAL-SEM-01 execution and its required governance parameters.
+7. Exact governance parameters, including unresolved CFO/TEAM weights.
+8. G-08 certification authority, thresholds, method qualification, retention, and trust-anchor decisions.
 9. Production execution safety.
-10. Approved change/migration authority delegation.
+10. Approved change and migration authority delegation.
 
-These are open gates, not claims that the corresponding production capabilities or governance decisions are complete.
+Other documented Founder decisions remain open: domain specification approval authority, change/review role delegation, post-Genesis release scope and reproducible release records, and the boundary between document-control identifiers and institutional ObjectIDs. See the [Founder Decision Record](00_SYSTEM/FOUNDER-DECISIONS.md), [Institutional Status](00_SYSTEM/INSTITUTIONAL-STATUS.md), and [curation audit](00_SYSTEM/REPOSITORY-CURATION-AUDIT-V0.1.md).
 
-## Engineering Workflow
+The current branch preserves, rather than resolves, the FS-SYS-002 conflicts over 16 specification filenames, 21 validation-manifest filenames, status-bearing filenames, identity boundaries, and logical taxonomy. No mass rename or new logical/physical directory is performed.
+
+## Repository map
+
+These are the physical locations in this branch:
+
+- `.github/workflows/` — focused reference test workflow.
+- `00_SYSTEM/` — repository charter, metadata, documentation architecture, status, decisions, and document register.
+- `01_FOUNDATION/` — Constitution, Institutional Physics, Meta-Model, and Genesis cross-audit.
+- `07_RELEASES/` — declared release notes and manifests.
+- `99_TEMPLATES/` — reusable institutional record template.
+- `canonical_obs/` — OBS implementation, manifest, tests, and state-machine ratification request.
+- `dec_core/`, `inq_core/`, `inq_interface/`, `runtime/` — implementation and reference runtime boundaries.
+- `specifications/` — domain, integration, and candidate specifications, each with its own authority status.
+- `production_validation/` — validation manifests, recorded results, and test programs.
+- `tests/` — focused implementation and regression tests.
+- `G07-AUTHORITATIVE-RUNTIME-DISCOVERY-V0.1.md` — non-normative runtime discovery report.
+- `README.md`, `OVERALL-PROGRESS-LEDGER.json`, `STATUS-PV17.md` — navigation and status summaries; they do not override source records.
+
+`02_SPECIFICATIONS/`, `03_OBJECTS/`, `04_GOVERNANCE/`, `05_CAPABILITIES/`, and `06_PROJECTS/` are logical categories, not physical directories. Documentation Architecture v1.0 preserves the existing physical tree.
+
+## Governance and evidence
+
+Authority comes from the decision process assigned to the affected layer. It does not come from filenames, directories, Git commits, tests, or AI output. Validation evidence establishes only what a named run tested under its recorded environment and scope. Evidence can inform a governance decision; it cannot replace that decision.
+
+The document register indexes high-consequence records. Validation manifests and source records remain controlling for their own claims. The Genesis release manifest does not identify a complete source tree or source commit; this remains a release-provenance gap.
+
+## Engineering workflow
 
 `CISA → validated candidate → FIB integration → branch → repository validation → review → merge/ratification`
 
-- **CISA** owns architecture and review.
+- **CISA** performs architecture and adversarial review.
 - **FIB** performs repository integration and execution.
-- **Founder** holds authority and resolves institutional decisions that remain open.
+- **Founder** holds institutional authority and resolves decisions that remain open.
 
-Merge and ratification are separate outcomes: repository integration or passing validation does not itself ratify a specification, resolve a Founder decision, or establish certification.
-
-## Current physical tree
-
-These are the directories that exist in the repository today:
-
-- `00_SYSTEM/` — repository control, architecture, status, and repository-level decisions
-- `01_FOUNDATION/` — constitutional and architectural foundation
-- `07_RELEASES/` — release snapshots
-- `99_TEMPLATES/` — controlled templates
-- `canonical_obs/` — OBS code, tests, manifests, and state-machine ratification record
-- `dec_core/`, `inq_core/`, `inq_interface/`, `runtime/` — implementation
-- `production_validation/`, `tests/` — validation plans, manifests, and tests
-- `specifications/` — specification records and domain decisions
-
-`02_SPECIFICATIONS/`, `03_OBJECTS/`, `04_GOVERNANCE/`, `05_CAPABILITIES/`, and `06_PROJECTS/` remain logical classes, not current physical directories. Architecture v1 does not move, delete, or rename existing implementation directories.
+Repository integration, branch publication, passing tests, merge, ratification, and certification are separate outcomes.
 
 ## Historical Genesis G-0.1 next target
 
-The Genesis release notes recorded `FS-OBS-001 — Observation Object Specification` as the next target at that release. This records the roadmap at the time of Genesis G-0.1 and is retained as history. The current engineering state and open gates are listed above; the historical target is not the current work plan.
+The Genesis release notes recorded `FS-OBS-001 — Observation Object Specification` as the next target at that time. This is preserved as historical roadmap context. The current engineering state and open gates above control this README's present status summary.
+
+## Further reading
+
+- [Documentation Architecture v1.0](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md)
+- [Institutional and Repository Status](00_SYSTEM/INSTITUTIONAL-STATUS.md)
+- [Document Register](00_SYSTEM/DOCUMENT-REGISTER.csv)
+- [Founder Decision Record](00_SYSTEM/FOUNDER-DECISIONS.md)
+- [Overall Progress Ledger](OVERALL-PROGRESS-LEDGER.json)
+- [FS-SYS-002 candidate specification](specifications/FS-SYS-002-INSTITUTIONAL-ARTIFACT-IDENTITY-AND-NAMING-V0.1.md)
+- [G-07 authoritative runtime discovery](G07-AUTHORITATIVE-RUNTIME-DISCOVERY-V0.1.md)
+- [Repository Curation Audit v0.1](00_SYSTEM/REPOSITORY-CURATION-AUDIT-V0.1.md)
