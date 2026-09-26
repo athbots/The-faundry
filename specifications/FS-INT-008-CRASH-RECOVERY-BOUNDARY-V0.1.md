@@ -1,6 +1,6 @@
 # FS-INT-008 — G-07/G-08 Crash-Recovery Boundary v0.1
 
-- **Status:** Integrated reference candidate; repository-owned focused tests pass; not ratified or certified
+- **Status:** Candidate provenance reconciled; independent repository implementation validated; not ratified or certified
 - **Implementation:** `runtime/crash_recovery_boundary.py` and `runtime/control_boundary.py`
 - **Runtime wiring:** `runtime/canonical_runtime.py`
 - **G-08 verification boundary:** `runtime/certification_evidence.py`
@@ -45,10 +45,22 @@ device power-loss guarantees, production G-09/G-02 adapter behavior, or G-10
 distributed consistency. It does not change G-07 lifecycle semantics or select
 governance/certification thresholds.
 
-The candidate ZIP identified as
-`the-foundry-g07-g08-crash-recovery-boundary-candidate-v0.1.zip` was not present
-in the checkout or synced project sources. Its supplied SHA-256
-`8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158` and stated
-15/15 result are provenance supplied by the requester only; the candidate files
-and tests were not byte-verified or executed here. The repository-owned tests
-and their result are recorded separately.
+## Candidate and repository provenance
+
+The transfer candidate is
+`the-foundry-g07-g08-crash-recovery-boundary-candidate-v0.1.zip`. Per the
+independent candidate-validation provenance supplied with this reconciliation,
+its SHA-256 was verified as
+`8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158`; its actual
+`tests/test_crash_recovery_boundary.py` was independently executed with pytest
+and passed **15/15**. The candidate archive is a transfer artifact; it is not
+the canonical repository record.
+
+The repository implementation was independently integrated from the boundary
+requirements using the existing shared control persistence/audit port. It was
+not blindly copied from the candidate archive. Its separately authored crash
+recovery suite passed **18/18**, the stated directly affected regression scope
+passed **95/95**, and the combined repository-owned validation passed **113/113**.
+The exact repository run is in
+`production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md`.
+The candidate and repository results remain separate evidence records.

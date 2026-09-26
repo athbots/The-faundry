@@ -94,7 +94,9 @@ This register records decisions that remain open after Documentation Architectur
 
 **Question:** Which roles may produce, independently verify, accept, retain, invalidate, and rely on G-08 evidence, and what approved rules govern those decisions?
 
-**Evidence:** The G-08 reference candidate records producer provenance, artifact digest, verification method, verifier, result, and audit history. This repository integration uses an injected authorization policy and a verifier-supplied PASS/FAIL result. It does not define role delegation, method qualification, retention, external trust anchors, or certification thresholds. The associated candidate archives were not available in this checkout for byte-level reconciliation.
+**Evidence:** The G-08 reference candidate records producer provenance, artifact digest, verification method, verifier, result, and audit history. This repository integration uses an injected authorization policy and a verifier-supplied PASS/FAIL result. It does not define role delegation, method qualification, retention, external trust anchors, or certification thresholds. At the time this decision record was opened, the earlier G-08 certification-evidence and G-07/G-08 evidence-boundary candidate archives had not been reconciled against repository files.
+
+**Provenance addendum — 2026-09-26:** The separate G-07/G-08 crash-recovery transfer candidate is now recorded with SHA-256 `8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158` and an independently reported pytest result of 15/15 PASS. Its repository implementation was integrated independently rather than copied from that archive. Candidate and repository validation remain separate in [`G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md`](../production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md). This addendum does not resolve the authority, method-qualification, retention, trust-anchor, or threshold questions in this decision.
 
 **Options:**
 - Approve a role and independence matrix, evidence classes, method requirements, and retention rules in a separate governance decision.

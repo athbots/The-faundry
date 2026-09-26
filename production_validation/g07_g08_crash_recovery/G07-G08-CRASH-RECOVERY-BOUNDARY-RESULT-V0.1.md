@@ -3,8 +3,9 @@
 - **Branch:** `integration/g07-g08-crash-recovery-v0.1`
 - **Tested source commit:** `4a51d1427004a8707085e65656c0851bee4ba75c`
 - **Recorded:** 2026-09-26 16:33 UTC
+- **Provenance reconciliation and post-reconciliation rerun:** 2026-09-26 16:45 UTC
 - **Environment:** Windows 11 10.0.26200, AMD64, Python 3.12.14, standard library only
-- **Status:** Repository-owned reference validation passed; candidate package not reconciled; not certified
+- **Status:** Candidate provenance reconciled; repository-owned reference validation passed; not certified
 
 ## Results
 
@@ -30,22 +31,24 @@ The crash tests terminate a child process after the aggregate and audit-event
 SQL writes but before transaction commit. Reopening the database confirms both
 uncommitted changes were rolled back and the prior committed state reconstructs.
 
-## Candidate package status
+## Candidate validation provenance
 
-The requester supplied the candidate name
-`the-foundry-g07-g08-crash-recovery-boundary-candidate-v0.1.zip`, SHA-256
-`8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158`, and a
-reported result of 15/15 PASS. That ZIP was not present in this checkout or the
-synced project sources. Therefore:
+Candidate: `the-foundry-g07-g08-crash-recovery-boundary-candidate-v0.1.zip`
 
-- Candidate tests executed here: **0**; the supplied 15/15 result was not independently reproduced.
-- Candidate bytes and claimed digest: **not verified**.
-- Candidate-specific behavior differences: **undetermined** because its files were unavailable.
-- Repository-owned equivalent crash/recovery tests: **18/18 PASS**, with 95/95 directly affected existing regression assertions/tests also passing.
+- SHA-256, independently verified: `8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158`.
+- Candidate test file: `tests/test_crash_recovery_boundary.py`.
+- Candidate command: `pytest tests/test_crash_recovery_boundary.py`.
+- Independent candidate result: **15/15 PASS**, as supplied in the Founder's reconciliation instruction.
+- This candidate result is separate from the repository-owned test runs below; it is not counted in their 113/113 total.
 
-An initial development run reported 11 passing tests and 5 teardown errors
-because the tests left SQLite handles open on Windows. The test cleanup was
-corrected. The final post-commit run above passed all 18 tests without errors.
+The repository implementation was independently integrated from the required
+boundary behavior and shared repository persistence/audit contract; it was not
+blindly copied from the transfer archive. The repository's 18 crash tests and
+its 95-test regression scope remain separately reported below.
+
+An initial repository development run reported 11 passing tests and 5 teardown
+errors because the tests left SQLite handles open on Windows. Test cleanup was
+corrected; the final repository run passed all 18 crash tests without errors.
 
 ## Integrated behavior
 
@@ -65,10 +68,9 @@ corrected. The final post-commit run above passed all 18 tests without errors.
 
 ## Remaining gaps and qualification
 
-- The actual G-07 candidate runtime and the supplied crash-recovery ZIP were
-  absent. This repository integrates the G-08 gate with the shared persistence
-  adapter but cannot establish complete G-07 runtime integration or compare
-  candidate behavior.
+- The actual G-07 candidate runtime is still not part of this repository
+  integration. The G-07 gate is connected through the shared persistence
+  adapter; complete integration into an authoritative G-07 runtime remains open.
 - The implementation is a SQLite reference model. Device/power-loss guarantees,
   production G-09 persistence, production G-02 audit, and G-10 distributed
   consistency remain unverified.

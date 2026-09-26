@@ -29,14 +29,20 @@
       "specification": "specifications/FS-INT-008-CRASH-RECOVERY-BOUNDARY-V0.1.md",
       "implementation": "runtime/crash_recovery_boundary.py",
       "result": "production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md",
-      "qualification": "Candidate ZIP is unavailable in this checkout; the supplied 15/15 candidate result has not been reproduced. The separately authored repository suite is recorded in production_validation/g07_g08_crash_recovery/. Local SQLite reference only; no production power-loss, G-09/G-02, or distributed consistency claim."
+      "candidate_provenance": {
+        "archive": "the-foundry-g07-g08-crash-recovery-boundary-candidate-v0.1.zip",
+        "sha256": "8d9c13485efaba2e926b10044a59ae3c2051ea888ed366ed4f3d557a41552158",
+        "independent_validation": "pytest tests/test_crash_recovery_boundary.py — 15/15 PASS; reported with the Founder's reconciliation instruction"
+      },
+      "repository_validation": "Independent repository integration; 18/18 crash tests, 95/95 regression scope, 113/113 total PASS; see production_validation/g07_g08_crash_recovery/G07-G08-CRASH-RECOVERY-BOUNDARY-RESULT-V0.1.md",
+      "qualification": "Candidate and repository results are separate. Local SQLite reference only; no production power-loss, G-09/G-02, or distributed consistency claim."
     },
     "G07_G08_evidence_reference": {
       "status": "INTEGRATED REFERENCE CANDIDATE — FOCUSED VALIDATION PASS; NOT CERTIFIED",
       "specification": "specifications/FS-CERT-008-CERTIFICATION-EVIDENCE-V1.md",
       "boundary": "specifications/FS-INT-007-008-EVIDENCE-BOUNDARY-V1.md",
       "manifest": "production_validation/g08_certification_evidence/PV-G08-MANIFEST.json",
-      "qualification": "G-08 uses the existing SQLite control/audit boundary. The G-07 runtime is absent; the adapter gates a caller-owned callback only. G-09/G-02 production binding, certification authority/thresholds, and candidate ZIP reconciliation remain open."
+      "qualification": "G-08 uses the existing SQLite control/audit boundary. The G-07 runtime is absent; the adapter gates a caller-owned callback only. G-09/G-02 production binding, certification authority/thresholds, and reconciliation of the earlier G-08 evidence/evidence-boundary candidates remain open. The separate crash-recovery candidate is recorded under G07_G08_crash_recovery_reference."
     },
     "G05_G06_change_migration_reference": {
       "status": "INTEGRATED REFERENCE MODEL — FOCUSED VALIDATION PASS",

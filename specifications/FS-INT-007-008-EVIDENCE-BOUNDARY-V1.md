@@ -26,13 +26,15 @@ actor. The callback performs the actual G-07 transition and persistence.
 
 ## Conflict and integration limitation
 
-This repository does not contain the G-07 candidate implementation or either
-candidate ZIP. The adapter therefore provides a fail-closed boundary around a
-caller-owned callback; it does not claim the G-07 lifecycle is implemented or
-that callbacks are durably persisted. The candidate package SHAs reported in
-the referenced conversation are provenance only and were not reproducible from
-files available in this checkout. This limitation is explicit and does not
-change G-07 semantic expectations.
+This repository does not contain the G-07 control-plane candidate implementation
+or the earlier G-08 evidence/evidence-boundary candidate ZIPs referenced when
+this adapter was first integrated. The separately named crash-recovery transfer
+candidate is reconciled in `FS-INT-008-CRASH-RECOVERY-BOUNDARY-V0.1.md` and its
+validation result; that reconciliation does not supply the missing G-07 runtime
+or retroactively validate these earlier candidate archives. This adapter
+provides a fail-closed boundary around a caller-owned callback; it does not claim
+the G-07 lifecycle is implemented or that callbacks are durably persisted. The
+distinction does not change G-07 semantic expectations.
 
 The adapter makes no G-10 distributed consistency claim and introduces no
 governance weights, certification thresholds, or authority delegation.
