@@ -7,6 +7,12 @@
 
 This page is a dated status snapshot, not a new ratification. Where a summary conflicts with a decision, release note, or validation manifest, the cited controlling record governs within its stated scope.
 
+## Provenance reconciliation addendum — 2026-09-27
+
+The header's `Status date` and `Status basis` preserve the original 2026-09-26 snapshot input: `main` at `b98ed49ccb1e75b941e8611151828788b05d198d`. For the later curation review, the inspected source was `integration/repository-curation-and-readme-v0.1` at `30000ba70cbee7d9da3e172fd27b9b255c0a5766`; `main` remained at `eb4c82e893afcbf52ed484249b0563f648c49160`. The curation branch includes the G-07 discovery and FS-SYS-002 candidate work and was not merged to `main`.
+
+This addendum clarifies provenance only. It does not refresh or ratify the status rows, change any authority, or claim that the branch-only work is on `main`. The [Repository Curation Audit](REPOSITORY-CURATION-AUDIT-V0.1.md) records the scope and limitations.
+
 ## Current state
 
 | Area | Current status | What that status means | Controlling record / open gate |

@@ -2,6 +2,14 @@
   "ledger_version": 2,
   "status_date": "2026-09-26",
   "basis_commit": "b98ed49ccb1e75b941e8611151828788b05d198d",
+  "provenance_reconciliation": {
+    "recorded_at": "2026-09-27",
+    "original_basis_commit": "b98ed49ccb1e75b941e8611151828788b05d198d",
+    "reviewed_branch": "integration/repository-curation-and-readme-v0.1",
+    "reviewed_branch_commit": "30000ba70cbee7d9da3e172fd27b9b255c0a5766",
+    "main_commit_at_review": "eb4c82e893afcbf52ed484249b0563f648c49160",
+    "qualification": "This records branch provenance only. The original status_date and basis_commit remain as the historical snapshot basis; the reviewed branch was not merged to main, and this entry does not revalidate the status claims."
+  },
   "status_register": "00_SYSTEM/DOCUMENT-REGISTER.csv",
   "institutional_status": "00_SYSTEM/INSTITUTIONAL-STATUS.md",
   "foundation": {

@@ -36,7 +36,7 @@ The foundation's institutional cognition flow remains recorded as Reality → Ob
 
 ## Current institutional and engineering state
 
-This status is for the current curation branch. It combines the pushed G-07 discovery and FS-SYS-002 work while preserving their original commits. The changes have not been merged to `main`; `main` therefore does not yet contain those branch-only records. The status snapshot and progress ledger still cite the earlier `b98ed49ccb1e75b941e8611151828788b05d198d` basis commit; the curation audit identifies this stale or ambiguous basis metadata.
+This status is for the current review branch. It carries the pushed G-07 discovery and FS-SYS-002 work, plus a dated status-provenance addendum, while preserving the original commits. The changes have not been merged to `main`; `main` therefore does not yet contain those branch-only records. The status snapshot and progress ledger preserve `b98ed49ccb1e75b941e8611151828788b05d198d` as their original basis and identify the later curation snapshot at `30000ba70cbee7d9da3e172fd27b9b255c0a5766` and `main` at `eb4c82e893afcbf52ed484249b0563f648c49160`. The addendum records provenance only; it does not revalidate status claims.
 
 | State | Current record |
 |---|---|
