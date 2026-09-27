@@ -2,6 +2,8 @@
 
 Institutional operating system for the Institution.
 
+For a plain-language explanation of the project's purpose, see [Project Purpose](PROJECT-PURPOSE.md).
+
 ## Authority and foundation
 
 The Genesis G-0.1 release records the Phase A foundation as frozen. Its release scope is the foundation artifacts named in its release notes; later engineering and governance records on `main` are not automatically part of that release.

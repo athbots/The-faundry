@@ -90,6 +90,8 @@ This register records decisions that remain open after Documentation Architectur
 
 **Decision:** Pending Founder. **Decision date / authority:** Pending.
 
+**Founder direction — migration planning sequence (2026-09-27):** After the document-identity and taxonomy crosswalk is decided, prepare a mapped physical-migration plan. This direction sets the order of future work only. It does not decide the crosswalk, select naming rules, require migration, authorize file or directory renames, or approve execution. Preserve existing paths until a separate migration decision is recorded.
+
 ## Closure protocol
 
 For each decision, record the selected option or a custom ruling, rationale, authority, date, affected artifacts, implementation owner, and validation/release evidence. If the Founder rejects every option, preserve the decision as open and state the blocking condition. Update the architecture index only after the relevant decision is recorded.
