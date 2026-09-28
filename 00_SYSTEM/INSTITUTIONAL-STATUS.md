@@ -2,17 +2,21 @@
 
 - **Status date:** 2026-09-26
 - **Status basis:** `main` at `b98ed49ccb1e75b941e8611151828788b05d198d` before this reconciliation commit
-- **Control source:** [`DOCUMENTATION-ARCHITECTURE-v1.0.md`](DOCUMENTATION-ARCHITECTURE-v1.0.md)
+- **Control source:** [`DOCUMENTATION-ARCHITECTURE-v1.1.md`](DOCUMENTATION-ARCHITECTURE-v1.1.md)
 - **Detail register:** [`DOCUMENT-REGISTER.csv`](DOCUMENT-REGISTER.csv)
 
 This page is a dated status snapshot, not a new ratification. Where a summary conflicts with a decision, release note, or validation manifest, the cited controlling record governs within its stated scope.
+
+## Dated amendment — 2026-09-28
+
+On review branch `integration/fd-doc-005-crosswalk-migration-plan-v0.1`, Founder Decision Record `FND-DEC-DOC-001` v1.1 records the FD-DOC-005 taxonomy and identity decisions. In this branch, Documentation Architecture v1.1 is the successor policy. Current `main` remains at the v1.0 baseline until a later integration decision. The successor retains the v1.0 physical tree and logical classes, adds the limited FS-SYS-002 crosswalk as an orthogonal artifact-type/provenance axis, and distinguishes Document Control IDs from ObjectIDs. The mapped physical-migration proposal is not execution authority; no paths have changed. This amendment updates only these documentation-architecture and identity claims. It does not revalidate the other 2026-09-26 status entries or change their original basis.
 
 ## Current state
 
 | Area | Current status | What that status means | Controlling record / open gate |
 |---|---|---|---|
 | Foundation | **Frozen — Genesis G-0.1** | Phase A foundation set is frozen for downstream work; later files on `main` are not thereby included in Genesis | `07_RELEASES/GENESIS-G0.1/RELEASE-NOTES.md`; exact source commit/full manifest remain unresolved |
-| Documentation architecture | **Active — v1.0** | Physical paths are preserved; the logical classes and status axes are defined | `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md` |
+| Documentation architecture | **Active — v1.1** | Preserves v1.0's physical tree/logical classes; adds the orthogonal artifact-type/provenance axis and identity distinction | `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md`; `FOUNDER-DECISIONS.md` |
 | OBS state-machine vocabulary | **Ratification pending** | The request to declare FS-OBS-001 G0.3 the single implementation state machine remains open | `canonical_obs/RATIFICATION-DECISION-REQUIRED.md`; `canonical_obs/MANIFEST.json` |
 | OBS semantic-safety boundary | **Ratified — FS-OBS-002 v1** | Ratified by DEC-OBS-002 within the semantic-safety scope; does not settle state-machine vocabulary or general semantic certification | `specifications/DEC-OBS-002-FS-OBS-002-RATIFICATION.json`; `specifications/FS-OBS-002-SEMANTIC-SAFETY-LAYER-V1.md` |
 | REAL-SEM-01 | **Mandatory gate — not executed** | No production-grade general semantic-understanding claim or certification | `specifications/REAL-SEM-01.md` |

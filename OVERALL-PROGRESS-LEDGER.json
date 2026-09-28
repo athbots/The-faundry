@@ -1,7 +1,8 @@
 {
   "ledger_version": 2,
-  "status_date": "2026-09-26",
-  "basis_commit": "b98ed49ccb1e75b941e8611151828788b05d198d",
+  "status_date": "2026-09-28",
+  "basis_commit": "effc241f285c414f1134327bd7dda3140d63f5fe",
+  "basis_note": "Main baseline plus Founder Decision Record FND-DEC-DOC-001 v1.1 on integration/fd-doc-005-crosswalk-migration-plan-v0.1. Only documentation architecture and FD-DOC-005 status were updated; other status claims were not revalidated.",
   "status_register": "00_SYSTEM/DOCUMENT-REGISTER.csv",
   "institutional_status": "00_SYSTEM/INSTITUTIONAL-STATUS.md",
   "foundation": {
@@ -10,10 +11,14 @@
     "qualification": "Later main-branch files are not automatically included in Genesis G-0.1. The release manifest does not identify a source commit or complete file list."
   },
   "documentation_architecture": {
-    "version": "1.0",
+    "version": "1.1",
     "status": "ACTIVE REPOSITORY-ORGANIZATION POLICY",
-    "path": "00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md",
-    "qualification": "Does not ratify domain specifications or certify production."
+    "path": "00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md",
+    "qualification": "FD-DOC-005 adopts an orthogonal artifact-type/provenance axis and separates Document Control IDs from ObjectIDs. Exact ID syntax/granularity, class-specific lifecycle/metadata, and physical migration execution remain open. Does not ratify domain specifications or certify production."
+  },
+  "documentation_identity_and_migration": {
+    "FD-DOC-005": "Taxonomy relationship and Document Control ID/ObjectID distinction decided by Founder on 2026-09-28; implementation details remain open.",
+    "physical_migration": "Proposed mapped plan recorded in FND-DEC-DOC-001 v1.1; no paths moved and execution not authorized."
   },
   "domain_authority": {
     "OBS state-machine vocabulary": "RATIFICATION PENDING — see canonical_obs/RATIFICATION-DECISION-REQUIRED.md",

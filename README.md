@@ -17,7 +17,7 @@ Frozen foundation artifacts are not edited in place to conceal change. Proposals
 ## Current repository status
 
 - Foundation: **Frozen — Genesis G-0.1**.
-- Documentation architecture: **Active — v1.0**; see [Documentation Architecture](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md).
+- Documentation architecture: **Active — v1.1**; see [Documentation Architecture](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md). v1.0 is retained as history.
 - OBS semantic-safety boundary: **FS-OBS-002 v1 ratified within its stated scope** by DEC-OBS-002.
 - OBS state-machine vocabulary: **ratification pending**; this is a separate decision from semantic-safety ratification.
 - REAL-SEM-01: **mandatory future gate, not executed**.
@@ -38,7 +38,7 @@ These are the directories that exist in the repository today:
 - `production_validation/`, `tests/` — validation plans, manifests, and tests
 - `specifications/` — specification records and domain decisions
 
-`02_SPECIFICATIONS/`, `03_OBJECTS/`, `04_GOVERNANCE/`, `05_CAPABILITIES/`, and `06_PROJECTS/` remain logical classes, not current physical directories. Architecture v1 does not move, delete, or rename existing implementation directories.
+`02_SPECIFICATIONS/`, `03_OBJECTS/`, `04_GOVERNANCE/`, `05_CAPABILITIES/`, and `06_PROJECTS/` remain logical classes, not current physical directories. Architecture v1.1 preserves current paths. Its orthogonal artifact-type/provenance axis does not move, delete, or rename files; any physical migration requires a separate Founder decision.
 
 ## Genesis G-0.1 next target
 
