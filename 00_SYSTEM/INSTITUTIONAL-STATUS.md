@@ -16,7 +16,7 @@ On review branch `integration/fd-doc-005-crosswalk-migration-plan-v0.1`, Founder
 | Area | Current status | What that status means | Controlling record / open gate |
 |---|---|---|---|
 | Foundation | **Frozen — Genesis G-0.1** | Phase A foundation set is frozen for downstream work; later files on `main` are not thereby included in Genesis | `07_RELEASES/GENESIS-G0.1/RELEASE-NOTES.md`; exact source commit/full manifest remain unresolved |
-| Documentation architecture | **Active — v1.1** | Preserves v1.0's physical tree/logical classes; adds the orthogonal artifact-type/provenance axis and identity distinction | `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md`; `FOUNDER-DECISIONS.md` |
+| Documentation architecture | **Founder-approved v1.1 — branch-only; main integration pending** | Preserves v1.0's physical tree/logical classes; adds the orthogonal artifact-type/provenance axis and identity distinction | `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md`; `FOUNDER-DECISIONS.md` |
 | OBS state-machine vocabulary | **Ratification pending** | The request to declare FS-OBS-001 G0.3 the single implementation state machine remains open | `canonical_obs/RATIFICATION-DECISION-REQUIRED.md`; `canonical_obs/MANIFEST.json` |
 | OBS semantic-safety boundary | **Ratified — FS-OBS-002 v1** | Ratified by DEC-OBS-002 within the semantic-safety scope; does not settle state-machine vocabulary or general semantic certification | `specifications/DEC-OBS-002-FS-OBS-002-RATIFICATION.json`; `specifications/FS-OBS-002-SEMANTIC-SAFETY-LAYER-V1.md` |
 | REAL-SEM-01 | **Mandatory gate — not executed** | No production-grade general semantic-understanding claim or certification | `specifications/REAL-SEM-01.md` |

@@ -17,7 +17,7 @@ Frozen foundation artifacts are not edited in place to conceal change. Proposals
 ## Current repository status
 
 - Foundation: **Frozen — Genesis G-0.1**.
-- Documentation architecture: **Active — v1.1**; see [Documentation Architecture](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md). v1.0 is retained as history.
+- Documentation architecture: Founder-approved **v1.1** is recorded on this review branch; current `main` remains at v1.0 pending integration. See [Documentation Architecture](00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.1.md).
 - OBS semantic-safety boundary: **FS-OBS-002 v1 ratified within its stated scope** by DEC-OBS-002.
 - OBS state-machine vocabulary: **ratification pending**; this is a separate decision from semantic-safety ratification.
 - REAL-SEM-01: **mandatory future gate, not executed**.

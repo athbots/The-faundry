@@ -2,9 +2,9 @@
 
 - **Document ID:** FND-DOC-ARCH-001
 - **Version:** 1.1
-- **Status:** Active repository-organization policy
+- **Status:** Founder-approved policy implementation; branch-only pending main integration
 - **Effective basis:** Documentation Architecture v1.0 plus Founder decision FD-DOC-005 recorded 2026-09-28 in `00_SYSTEM/FOUNDER-DECISIONS.md`
-- **Supersedes:** `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md` for current status and identity/taxonomy rules; v1.0 is retained unchanged as history
+- **Supersedes:** `00_SYSTEM/DOCUMENTATION-ARCHITECTURE-v1.0.md` for the Founder-decided identity/taxonomy relationship once integrated; v1.0 remains current on main until merge and is retained as history
 - **Authority boundary:** Subordinate to `CONST-001`, `IP-001`, `FM-001`, and `00_SYSTEM/REPOSITORY-CHARTER.md`; this architecture does not ratify domain specifications or production claims.
 
 ## 1. Purpose and scope
@@ -113,7 +113,7 @@ The live status snapshot is maintained in [`INSTITUTIONAL-STATUS.md`](INSTITUTIO
 - **REAL-SEM-01:** mandatory future gate; not executed. Production semantic certification remains prohibited until an authorized gate decision changes this status.
 - **DEC and INQ:** each file retains its declared proposal or validated-reference-model status. A validated model is not a ratified organizational policy.
 - **PV-17:** 12/12 reference-model concurrency/persistence invariants pass. Production database durability/isolation, distributed consensus, crash recovery, real execution safety, exact governance weights, and REAL-SEM-01 remain open; production is not certified.
-- **Documentation architecture:** v1 adopts the physical/logical distinction in this document. It does not close the separate open questions about specification authority, approval delegations, complete release provenance, or object/document identity.
+- **Documentation architecture:** The Founder has decided the orthogonal taxonomy relationship and conceptual Document Control ID/ObjectID distinction. Exact ID syntax/granularity, class-level metadata/lifecycle rules, specification authority, approval delegations, and complete release provenance remain open. This v1.1 implementation is on a review branch; current `main` remains at v1.0 until merge.
 
 ## 7. Traceability requirements
 
@@ -149,4 +149,4 @@ Every release record must identify the source commit and tree, included artifact
 
 ## Revision history
 
-- **v1.1 — 2026-09-28:** records the Founder-selected orthogonal taxonomy relationship and Document Control ID/ObjectID distinction. Preserves the current physical tree. Exact ID format/granularity, class-specific metadata/lifecycle details, and physical migration execution remain open.
+- **v1.1 — 2026-09-28:** records the Founder-selected orthogonal taxonomy relationship and Document Control ID/ObjectID distinction. Preserves the current physical tree. Exact ID format/granularity, class-specific metadata/lifecycle details, and physical migration execution remain open. Founder-approved implementation is branch-only pending main integration.

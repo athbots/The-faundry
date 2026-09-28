@@ -104,6 +104,7 @@ This register records decisions after Documentation Architecture v1. FD-DOC-001 
 
 - **Status:** Proposed planning artifact within this decision record; no files or directories have been moved or renamed.
 - **Baseline:** GitHub `main` at `effc241f285c414f1134327bd7dda3140d63f5fe`, inspected 2026-09-28. The tracked tree has 132 paths; `specifications/` has 14 entries (12 Markdown specifications and 2 JSON decision/change records); `production_validation/` has 19 JSON manifests.
+- **Inventory boundary:** This map covers only paths present on that exact `main` commit. It excludes artifacts present only on unmerged integration branches, including the FS-SYS-002 candidate integration, G-05/G-06 and G-07/G-08 integration work, and the crosswalk review branch. Before any migration execution is considered, re-inventory the selected source commit and extend or replace this map to include every then-current tracked artifact; this proposal does not imply that excluded branch work is approved for integration.
 - **Purpose:** Map the records that could move if a later Founder decision materializes logical classes as physical directories. The selected orthogonal taxonomy does not itself require physical moves.
 
 ### Recommended disposition
